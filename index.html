@@ -1,0 +1,546 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SHOWFLOOR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --ink:#14171A; --ink-2:#1D2125; --ink-3:#2A2F35; --paper:#F7F4EF; --sand:#EDE7DC; --ember:#E04E1B; --lemon:#F4C84A; --sea:#1F6F5C;
+  --text:#F7F4EF; --muted:#A7A29A; --line:#2E343A; --dark-text:#14171A; --dark-muted:#5C6165; --dark-line:#DCD6CB;
+  --display:'Archivo','Arial Narrow',Arial,sans-serif; --body:'Source Serif 4',Georgia,'Times New Roman',serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:19px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+h1,h2,h3,h4{margin:0;font-family:var(--display);line-height:.98;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+section{padding-block:clamp(72px,10vw,132px)}
+.light{background:var(--paper);color:var(--dark-text)}
+.sand{background:var(--sand);color:var(--dark-text)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ember)}
+.h2{font-size:clamp(40px,6vw,84px);font-weight:900;font-stretch:112%;letter-spacing:-.02em;text-transform:uppercase}
+.lede{font-size:clamp(19px,1.7vw,22px);color:var(--muted);max-width:60ch}
+.light .lede,.sand .lede{color:var(--dark-muted)}
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:clamp(32px,5vw,56px)}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:24px}
+.light .src,.sand .src{color:var(--dark-muted)}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(20,23,26,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.logo{font-family:var(--display);font-weight:900;font-stretch:125%;letter-spacing:.06em;font-size:18px;text-decoration:none}
+.logo b{color:var(--ember)}
+.nav nav{display:flex;gap:22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:15px 22px;border-radius:40px;text-decoration:none;border:1.5px solid var(--text);background:transparent;color:inherit;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.fill{background:var(--ember);border-color:var(--ember);color:#fff}
+@media (max-width:820px){.nav nav{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(56px,7vw,88px);position:relative}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,64px);align-items:end}
+.hero h1{font-size:clamp(46px,7.2vw,108px);font-weight:900;font-stretch:118%;letter-spacing:-.03em;text-transform:uppercase}
+.hero h1 span{color:var(--ember)}
+.hero .lede{margin-top:26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.reel{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;width:100%;min-width:0}
+.reel figure{margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:9/16;background:var(--ink-2)}
+.reel figure:nth-child(2){transform:translateY(38px)}
+.reel video,.reel img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:#fff;background:#FE2C55;padding:4px 8px;border-radius:6px}
+.badge.alt{background:rgba(0,0,0,.55)}
+.reel figcaption{position:absolute;left:10px;right:10px;bottom:10px;font-family:var(--mono);font-size:11px;background:rgba(20,23,26,.72);padding:6px 9px;border-radius:9px}
+@media (max-width:900px){.hero .grid{grid-template-columns:1fr}.reel{max-width:460px}}
+
+/* ticker */
+.ticker{background:var(--ember);color:#fff;overflow:hidden;white-space:nowrap;border-block:1px solid #B83B12}
+.ticker .run{display:inline-flex;gap:28px;padding-block:16px;animation:run 38s linear infinite;font-family:var(--display);font-weight:900;font-stretch:120%;font-size:clamp(18px,2vw,24px);letter-spacing:.04em;text-transform:uppercase}
+.ticker i{font-style:normal;opacity:.6}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* questions */
+.q4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--dark-text)}
+.q4 div{padding:22px 20px 26px 0;border-right:1px solid var(--dark-line)}
+.q4 div:last-child{border-right:0}
+.q4 div + div{padding-left:20px}
+.q4 small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--ember)}
+.q4 h3{font-size:clamp(24px,2.4vw,32px);font-weight:800;margin-top:10px;font-stretch:100%}
+@media (max-width:820px){.q4{grid-template-columns:1fr 1fr}.q4 div{border-right:0;padding-left:0!important;border-bottom:1px solid var(--dark-line)}}
+.statement{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);margin-top:clamp(40px,6vw,72px)}
+.statement p.big{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1.1}
+@media (max-width:820px){.statement{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:9px 13px;border-radius:30px;border:1px solid var(--dark-line);background:#fff}
+.dark-chips .chip{background:transparent;border-color:var(--line);color:var(--text)}
+
+/* founders */
+.founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:start}
+.founder figure{margin:0;border-radius:26px;overflow:hidden;aspect-ratio:3/4;position:sticky;top:90px}
+.founder figure img{width:100%;height:100%;object-fit:cover}
+.founder h3.name{font-size:clamp(44px,6vw,88px);font-weight:900;font-stretch:115%;text-transform:uppercase}
+.roles{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--lemon);margin-top:12px;text-transform:uppercase}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.nums div{border-top:2px solid var(--line);padding-top:12px}
+.nums b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(30px,3.4vw,44px);color:var(--ember);line-height:1}
+.nums span{font-size:14.5px;color:var(--muted)}
+.qs{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qs li{list-style:none;padding:12px 14px;border-radius:12px;background:var(--ink-2);font-size:16.5px}
+.qs{padding:0}
+.case{margin-top:28px;border-radius:22px;background:var(--ink-2);padding:24px}
+.case h4{font-size:26px;font-weight:800}
+.case .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.case .gal img{border-radius:12px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.awards{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:8px}
+.awards li{padding:12px 14px;border-radius:12px;border:1px solid var(--line);font-size:16px}
+.awards li b{font-family:var(--mono);font-size:12px;color:var(--lemon);letter-spacing:.06em;margin-right:8px}
+.talk{margin-top:14px;font-family:var(--display);font-weight:800;font-size:clamp(22px,2.4vw,30px);line-height:1.15}
+.talk span{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:6px}
+@media (max-width:900px){.founder{grid-template-columns:1fr}.founder figure{position:static;max-width:420px}.nums{grid-template-columns:1fr 1fr}.qs{grid-template-columns:1fr}}
+.leaders{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+.leader{border-radius:22px;padding:clamp(22px,3vw,34px);background:var(--ink-2);border:1px solid var(--line)}
+.leader h3{font-size:clamp(34px,4vw,54px);font-weight:900;font-stretch:112%;text-transform:uppercase}
+.leader ul{padding-left:18px;margin:16px 0 0;display:flex;flex-direction:column;gap:6px;font-size:17px;color:#D8D2C8}
+.leader .dark-chips{margin-top:18px}
+@media (max-width:820px){.leaders{grid-template-columns:1fr}}
+
+/* specialists */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tabs button{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:11px 15px;border-radius:30px;border:1.5px solid var(--dark-text);background:transparent;color:var(--dark-text);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--dark-text);color:var(--paper)}
+.spec{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.bignum{font-family:var(--display);font-weight:900;font-stretch:125%;font-size:clamp(120px,18vw,260px);line-height:.8;color:var(--ember);letter-spacing:-.04em}
+.panel{background:#fff;border:1px solid var(--dark-line);border-radius:22px;padding:24px;min-height:220px}
+.panel .chips .chip{font-size:14px;padding:11px 15px}
+@media (max-width:820px){.spec{grid-template-columns:1fr}}
+
+/* compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cmp{border-radius:22px;padding:28px;border:1px solid var(--line)}
+.cmp small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--muted)}
+.cmp .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px;font-family:var(--display);font-weight:800;font-size:clamp(20px,2vw,26px)}
+.cmp .flow i{font-style:normal;color:var(--muted);font-family:var(--mono);font-size:16px}
+.cmp.b{background:var(--ember);border-color:var(--ember)}
+.cmp.b small,.cmp.b .flow i{color:#FFE3D8}
+.cmp p{margin-top:14px;font-size:17px;color:var(--muted)}
+.cmp.b p{color:#FFF1EA}
+@media (max-width:820px){.compare{grid-template-columns:1fr}}
+.amplify{margin-top:16px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center}
+.amplify div{border-radius:18px;padding:20px;background:var(--ink-2);font-family:var(--display);font-weight:800;font-size:20px}
+.amplify div small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--lemon);margin-bottom:6px}
+.amplify i{font-style:normal;font-family:var(--mono);color:var(--muted)}
+@media (max-width:820px){.amplify{grid-template-columns:1fr}.amplify i{transform:rotate(90deg);justify-self:center}}
+
+/* army */
+.army{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.field{position:relative;aspect-ratio:1.3;border-radius:26px;background:var(--ink);overflow:hidden}
+.field canvas{width:100%;height:100%;display:block}
+.armyctl{margin-top:24px}
+.armyctl label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em}
+input[type=range]{width:100%;accent-color:var(--ember);height:30px}
+.armystats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.armystats div{background:#fff;border:1px solid var(--dark-line);border-radius:16px;padding:14px 16px}
+.armystats b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(28px,3vw,38px);line-height:1;font-variant-numeric:tabular-nums}
+.armystats span{font-size:14px;color:var(--dark-muted)}
+.tests{margin-top:22px}
+@media (max-width:820px){.army{grid-template-columns:1fr}}
+
+/* live */
+.mix{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mix div{border-radius:20px;padding:22px;background:var(--ink-2);border:1px solid var(--line)}
+.mix b{font-family:var(--display);font-weight:900;font-size:clamp(24px,2.4vw,32px);text-transform:uppercase;display:block}
+.mix span{color:var(--muted);font-size:16px}
+.mix .plus{background:var(--ember);border-color:var(--ember)}
+.mix .plus span{color:#FFF1EA}
+@media (max-width:820px){.mix{grid-template-columns:1fr 1fr}}
+.needs{margin-top:24px}
+
+/* model */
+.model{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:start}
+.steps{display:flex;flex-direction:column;gap:8px}
+.steps button{all:unset;cursor:pointer;display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid var(--dark-line);background:#fff;font-weight:700;font-size:17px}
+.steps button span{font-family:var(--mono);font-size:12px;color:var(--ember);font-weight:700}
+.steps button[aria-selected="true"]{background:var(--dark-text);color:var(--paper);border-color:var(--dark-text)}
+.stepcard{border-radius:26px;overflow:hidden;background:var(--dark-text);color:var(--paper);position:sticky;top:90px}
+.stepcard img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.stepcard .in{padding:26px}
+.stepcard h3{font-size:clamp(30px,3.4vw,46px);font-weight:900;text-transform:uppercase;font-stretch:110%}
+.stepcard p{margin-top:12px;color:#D8D2C8}
+@media (max-width:820px){.model{grid-template-columns:1fr}.stepcard{position:static}}
+.studiocaps{margin-top:16px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{border-top:3px solid var(--ember);padding-top:16px}
+.stat b{display:block;font-family:var(--display);font-weight:900;font-stretch:115%;font-size:clamp(56px,8vw,112px);line-height:.9;color:var(--lemon)}
+.stat p{margin-top:12px;color:var(--muted)}
+@media (max-width:820px){.stats{grid-template-columns:1fr}}
+.stack{margin-top:40px;display:flex;flex-wrap:wrap;gap:8px}
+.stack span{font-family:var(--mono);font-size:12.5px;font-weight:700;padding:10px 14px;border-radius:30px;background:var(--ink-2);border:1px solid var(--line)}
+.stack span.new{background:var(--sea);border-color:var(--sea)}
+
+/* moda */
+.moda{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:28px;overflow:hidden;background:var(--dark-text);color:var(--paper)}
+.moda img{width:100%;height:100%;object-fit:cover;min-height:380px}
+.moda .in{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:16px;justify-content:center}
+.moda h3{font-size:clamp(34px,4vw,56px);font-weight:900;font-stretch:112%;text-transform:uppercase}
+@media (max-width:820px){.moda{grid-template-columns:1fr}}
+
+/* approach */
+details{border-top:1px solid var(--dark-line);padding:20px 0}
+details:last-of-type{border-bottom:1px solid var(--dark-line)}
+summary{cursor:pointer;list-style:none;display:flex;gap:18px;align-items:baseline;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,34px)}
+summary::-webkit-details-marker{display:none}
+summary span{font-family:var(--mono);font-size:13px;color:var(--ember);font-weight:700}
+summary::after{content:"+";margin-left:auto;font-family:var(--mono);color:var(--ember)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;padding-left:48px;font-family:var(--mono);font-size:14px;color:var(--dark-muted);letter-spacing:.02em}
+.care{margin-top:36px}
+
+/* final */
+.final h2{font-size:clamp(46px,8vw,122px);font-weight:900;font-stretch:118%;text-transform:uppercase;line-height:.92;letter-spacing:-.03em}
+.final h2 span{color:var(--ember)}
+.contact{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact code{font-family:var(--mono);font-size:14px;padding:12px 16px;border-radius:12px;background:var(--ink-2);border:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.ticker .run{animation:none}*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">SHOW<b>FLOOR</b></a>
+    <nav aria-label="Sections"><a href="#who">Who we are</a><a href="#founders">Founders</a><a href="#commerce">Commerce</a><a href="#studio">Naples studio</a><a href="#approach">Approach</a></nav>
+    <a class="btn fill" href="#contact">Talk to us</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Performance commerce · Naples, Florida</p>
+      <h1 style="margin-top:20px">We don't just market products. <span>We build systems that sell them.</span></h1>
+      <p class="lede">Built by entrepreneurs. Backed by 30+ specialists. Designed around sales — creators, affiliates, LIVE commerce and performance media, working as one system.</p>
+      <div class="ctas"><a class="btn fill" href="#contact">Book a strategy call</a><a class="btn" href="#commerce">See how it works</a></div>
+    </div>
+    <div class="reel">
+      <figure><video src="media/ugc_tryon.mp4" poster="media/tryon_still.jpg" autoplay muted loop playsinline aria-label="Creator try-on video"></video><span class="badge">LIVE</span><figcaption>Creator try-on · Smart SwimSuits</figcaption></figure>
+      <figure><video src="media/ugc_beach.mp4" poster="media/beach_still.jpg" autoplay muted loop playsinline aria-label="Creator beach video"></video><span class="badge alt">AFFILIATE</span><figcaption>Creator content · Smart SwimSuits</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="run">
+  <span>Product</span><i>→</i><span>Positioning</span><i>→</i><span>Offer</span><i>→</i><span>Content</span><i>→</i><span>Traffic</span><i>→</i><span>Conversion</span><i>→</i><span>Sales</span><i>→</i><span>Retention</span><i>→</i><span>Scale</span><i>✦</i>
+  <span>Product</span><i>→</i><span>Positioning</span><i>→</i><span>Offer</span><i>→</i><span>Content</span><i>→</i><span>Traffic</span><i>→</i><span>Conversion</span><i>→</i><span>Sales</span><i>→</i><span>Retention</span><i>→</i><span>Scale</span><i>✦</i>
+</div></div>
+
+<!-- WHO -->
+<section class="light" id="who">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Who we are</p><h2 class="h2">We are not just a marketing agency.</h2><p class="lede">We are entrepreneurs, operators and sales builders. We have founded companies, developed products, managed production, sold through e-commerce and wholesale, opened retail, negotiated partnerships, produced events and managed ad budgets. We know what happens before an ad launches — and after the customer clicks.</p></div>
+    <div class="q4">
+      <div><small>PRODUCT</small><h3>What are we selling?</h3></div>
+      <div><small>POSITIONING</small><h3>Why should they care?</h3></div>
+      <div><small>CONTENT</small><h3>Why should they stop?</h3></div>
+      <div><small>SALES</small><h3>Why should they buy?</h3></div>
+    </div>
+    <div class="statement">
+      <p class="big">Marketing is not the final objective. Views, clicks and impressions matter only when they connect to sales, margin, retention and growth.</p>
+      <div>
+        <p class="eyebrow" style="margin-bottom:14px">Our expertise spans</p>
+        <div class="chips">
+          <span class="chip">Business &amp; growth strategy</span><span class="chip">Strategic marketing</span><span class="chip">Meta &amp; performance ads</span><span class="chip">Sales &amp; business development</span><span class="chip">Consumer psychology</span><span class="chip">Product development</span><span class="chip">E-commerce &amp; DTC</span><span class="chip">Retail &amp; wholesale</span><span class="chip">TikTok Shop</span><span class="chip">Affiliate &amp; creator commerce</span><span class="chip">LIVE commerce</span><span class="chip">Content &amp; video</span><span class="chip">Marketplaces</span><span class="chip">Partnerships</span><span class="chip">Events &amp; experiential</span><span class="chip">Analytics &amp; scaling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section id="founders">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Founder experience</p><h2 class="h2">We think like business owners — because we are.</h2></div>
+    <div class="founder">
+      <figure><img src="media/runway.jpg" alt="Smart SwimSuits look on the runway"></figure>
+      <div>
+        <h3 class="name">Sasha Royce</h3>
+        <p class="roles">Serial entrepreneur · Brand builder · Growth strategist · Sustainable innovator</p>
+        <div class="nums">
+          <div><b>2014</b><span>in business since</span></div>
+          <div><b>4</b><span>projects built &amp; sold</span></div>
+          <div><b>10+ yrs</b><span>building &amp; selling</span></div>
+          <div><b>Patent</b><span>material innovation</span></div>
+        </div>
+        <p class="lede" style="margin-top:26px">She looks at marketing as a founder who has had to build the product, sell it, pay for acquisition, manage operations and make the economics work. The founder questions come first:</p>
+        <ul class="qs">
+          <li>What does the customer actually want?</li><li>How should it be positioned and priced?</li>
+          <li>What margin is there for acquisition?</li><li>Which sales channel fits the product?</li>
+          <li>How does attention turn into a purchase?</li><li>How do we build a system that scales?</li>
+        </ul>
+        <div class="case">
+          <p class="eyebrow">Founder case · Smart SwimSuits</p>
+          <h4 style="margin-top:10px">A differentiated consumer brand, built hands-on.</h4>
+          <p style="margin-top:10px;color:var(--muted);font-size:17px">Product and commercialization, manufacturing and sourcing, D2C, physical retail, wholesale, content, partnerships, PR, inventory and fulfillment — every part of the consumer business, not a case study watched from outside.</p>
+          <div class="gal"><img src="media/pool.jpg" alt="Smart SwimSuits one-piece by a pool"><img src="media/beach.jpg" alt="Smart SwimSuits one-piece on the beach"><img src="media/reef.jpg" alt="Smart SwimSuits bikini, Reef print"></div>
+          <ul class="awards">
+            <li><b>2023 · 2024</b>"Most Innovative &amp; Sustainable Swimwear Brand of the World" — Janara</li>
+            <li><b>2025</b>Drapers shortlist, Sustainable Textile Innovation</li>
+            <li><b>2026</b>Sustainable Ocean Stewardship nomination</li>
+            <li><b>2026</b>Fashion Group International Rising Star finalist, sustainability</li>
+            <li><b>RUNWAY</b>New York Fashion Week · Miami Swim Week</li>
+          </ul>
+          <p class="talk"><span>EARTHX2026 SPEAKER</span>"How to make sustainable products desirable for consumers."</p>
+        </div>
+      </div>
+    </div>
+    <div class="leaders">
+      <div class="leader">
+        <p class="eyebrow">Leadership</p>
+        <h3 style="margin-top:10px">Dima Mo</h3>
+        <p class="roles">Entrepreneur · Growth architect · Strategic marketer · 15+ years</p>
+        <ul>
+          <li>Founded a manufacturing and export business in phytodesign.</li>
+          <li>Brought a franchise model to a new market and built a network of 400+ distribution points.</li>
+          <li>Led marketing and PR for a major regional retail organization.</li>
+          <li>Co-launched the SumIT startup accelerator with partners including PwC and EMC².</li>
+        </ul>
+        <div class="chips dark-chips"><span class="chip">Growth &amp; scaling</span><span class="chip">Positioning</span><span class="chip">Sales systems</span><span class="chip">Franchising</span><span class="chip">Market expansion</span><span class="chip">Founder advisory</span></div>
+      </div>
+      <div class="leader">
+        <p class="eyebrow">Leadership</p>
+        <h3 style="margin-top:10px">Julia Grace Jacobson</h3>
+        <p class="roles">Fashion designer · Entrepreneur · Producer · 10+ years</p>
+        <ul>
+          <li>International fashion experience across Miami, New York, Dubai, Paris and Milan.</li>
+          <li>Founder of SSS &amp; Beyond Sustainable Marketplace.</li>
+          <li>Works where product presentation, storytelling and the sale meet.</li>
+        </ul>
+        <div class="chips dark-chips"><span class="chip">Creative direction</span><span class="chip">Runway production</span><span class="chip">Brand partnerships</span><span class="chip">Content &amp; video</span><span class="chip">TikTok LIVE</span><span class="chip">Marketplaces</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALISTS -->
+<section class="sand">
+  <div class="wrap spec">
+    <div>
+      <p class="eyebrow">Execution capacity</p>
+      <div class="bignum" style="margin-top:14px">30+</div>
+      <h2 class="h2" style="font-size:clamp(30px,3.6vw,48px);margin-top:12px">trusted specialists, one connected team.</h2>
+      <p class="lede" style="margin-top:14px">Senior strategy at the center. Specialists where they matter. We assemble the mix that fits the product, the market and the stage — not the same agency template for everyone.</p>
+    </div>
+    <div>
+      <div class="tabs" role="tablist" aria-label="Specialist groups">
+        <button role="tab" aria-selected="true" data-g="0">Performance</button><button role="tab" aria-selected="false" data-g="1">E-commerce</button><button role="tab" aria-selected="false" data-g="2">Creators &amp; affiliates</button><button role="tab" aria-selected="false" data-g="3">Creative &amp; LIVE</button>
+      </div>
+      <div class="panel" role="tabpanel" aria-live="polite"><div class="chips" id="specChips"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCE -->
+<section id="commerce">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Where we came from → where we are going</p><h2 class="h2">From performance marketing to performance commerce.</h2><p class="lede">Years of Meta ads, creative testing, funnels and scaling. We are not abandoning that — we are applying it to a new layer built on creators, affiliates and real-time selling. Not a pivot. The next layer on top.</p></div>
+    <div class="compare">
+      <div class="cmp"><small>PAID MEDIA</small><div class="flow"><span>Spend</span><i>→</i><span>Traffic</span><i>→</i><span>Conversion?</span></div><p>You buy attention before you know how much of it will convert.</p></div>
+      <div class="cmp b"><small>AFFILIATE COMMERCE</small><div class="flow"><span>Creator</span><i>→</i><span>Content</span><i>→</i><span>Sale</span><i>→</i><span>Commission</span></div><p>A meaningful part of acquisition cost is tied directly to a transaction.</p></div>
+    </div>
+    <div class="amplify">
+      <div><small>01</small>Creators create signal</div><i>→</i>
+      <div><small>02</small>Data identifies winners</div><i>→</i>
+      <div style="background:var(--lemon);color:var(--ink)"><small style="color:var(--ink)">03</small>Paid media amplifies winners</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARMY -->
+<section class="light">
+  <div class="wrap army">
+    <div>
+      <p class="eyebrow">Affiliate commerce</p>
+      <h2 class="h2" style="margin-top:14px">We call it building an affiliate army.</h2>
+      <p class="lede" style="margin-top:16px">Not one influencer — a distributed sales network. Start with 10 creators, grow to 50, then 100 and beyond, with the strongest creators and angles earning more attention over time. Drag to grow the network.</p>
+      <div class="armyctl">
+        <label for="army"><span>Creators in the network</span><output id="armyOut">10</output></label>
+        <input type="range" id="army" min="10" max="300" step="10" value="10">
+      </div>
+      <div class="armystats">
+        <div><b id="aVid">40</b><span>videos a month*</span></div>
+        <div><b id="aAng">10</b><span>angles in testing</span></div>
+        <div><b id="aWin">1</b><span>top creators emerging*</span></div>
+      </div>
+      <p class="src">*Illustration: assumes 4 videos per creator a month and roughly 1 in 10 creators becoming a top performer.</p>
+    </div>
+    <div>
+      <div class="field" aria-hidden="true"><canvas id="armyCanvas"></canvas></div>
+      <div class="tests">
+        <p class="eyebrow" style="margin-bottom:10px">Every video tests something real</p>
+        <div class="chips"><span class="chip">Hooks</span><span class="chip">Benefits</span><span class="chip">Demonstrations</span><span class="chip">Customer problems</span><span class="chip">Objections</span><span class="chip">Use cases</span><span class="chip">Storytelling</span><span class="chip">Offers</span><span class="chip">Audiences</span><span class="chip">Bundles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section>
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">LIVE commerce</p><h2 class="h2">LIVE is a digital sales floor.</h2><p class="lede">Short-form content creates discovery. LIVE adds real-time interaction: see the product, ask a question, hear an objection answered, get an offer and buy while the conversation is still happening.</p></div>
+    <div class="mix">
+      <div><b>QVC</b><span>Demonstration</span></div>
+      <div><b>Retail associate</b><span>Human guidance</span></div>
+      <div><b>Social media</b><span>Community</span></div>
+      <div class="plus"><b>E-commerce</b><span>Immediate purchase</span></div>
+    </div>
+    <div class="needs">
+      <p class="eyebrow" style="margin-bottom:12px">A LIVE system needs more than a camera</p>
+      <div class="chips dark-chips"><span class="chip">The right products</span><span class="chip">The right host</span><span class="chip">The right offer</span><span class="chip">Strong hooks</span><span class="chip">Sales scripts</span><span class="chip">Product sequencing</span><span class="chip">Demonstration</span><span class="chip">Objection handling</span><span class="chip">Audience interaction</span><span class="chip">Urgency &amp; promotions</span><span class="chip">Retention</span><span class="chip">Analytics &amp; testing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO + MODEL -->
+<section class="sand" id="studio">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Infrastructure · SSS Studio · 800 Seagate Drive, Naples</p><h2 class="h2">We are building LIVE commerce infrastructure in Naples.</h2><p class="lede">SSS Studio is where we already run our livestreams — and we are growing it into a LIVE and content-production space built as a sales environment — where product knowledge, hosting, content, offers, testing and conversion come together. Not one livestream: a repeatable sales channel.</p></div>
+    <div class="model">
+      <div class="steps" role="tablist" aria-label="Operating model" id="steps"></div>
+      <div class="stepcard" aria-live="polite">
+        <img id="stImg" src="media/surf.jpg" alt="">
+        <div class="in"><p class="eyebrow" id="stN">Step 01</p><h3 id="stT" style="margin-top:8px">Build the affiliate network</h3><p id="stD">Recruit creators who fit the product and the customer.</p></div>
+      </div>
+    </div>
+    <div class="studiocaps">
+      <p class="eyebrow" style="margin:28px 0 12px">Studio capabilities</p>
+      <div class="chips"><span class="chip">TikTok LIVE</span><span class="chip">Recurring LIVE programming</span><span class="chip">Professional hosts</span><span class="chip">Product demonstrations</span><span class="chip">Creator &amp; affiliate content</span><span class="chip">UGC-style content</span><span class="chip">Short-form video</span><span class="chip">Paid ad creative</span><span class="chip">Product photography</span><span class="chip">Multi-platform production</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section>
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Why now</p><h2 class="h2">The market is already moving.</h2></div>
+    <div class="stats">
+      <div class="stat"><b>120%</b><p>U.S. TikTok Shop sales growth vs. the same period a year earlier, reported by TikTok in June 2025.</p></div>
+      <div class="stat"><b>8M+</b><p>Hours of LIVE shopping hosted by brands and creators in the U.S. in 2024.</p></div>
+      <div class="stat"><b>$68B</b><p>Coresight Research forecast for U.S. livestream e-commerce in 2026 — more than 5% of online sales.</p></div>
+    </div>
+    <p class="src">TikTok Newsroom, "TikTok Shop is where shoppers come to discover" (June 2025) · Coresight Research (a forecast, not an observed result).</p>
+    <p class="lede" style="margin-top:36px">Retail still matters. Our thesis is not that LIVE or affiliates replace stores, websites, Amazon or paid media — it is that brands can add a sales layer alongside them.</p>
+    <div class="stack"><span>Physical retail</span><span>Website</span><span>Marketplaces</span><span>Paid media</span><span class="new">Creators</span><span class="new">Affiliates</span><span class="new">LIVE</span><span>Retention</span></div>
+  </div>
+</section>
+
+<!-- MODA -->
+<section class="light">
+  <div class="wrap">
+    <div class="moda">
+      <img src="media/runway.jpg" alt="Fashion on the runway">
+      <div class="in">
+        <p class="eyebrow">Experiential capability</p>
+        <h3>Moda Luxe Collective × Cars on 5th</h3>
+        <p style="color:#D8D2C8">We are building Moda Luxe Collective in Naples with the Cars on 5th / Naples Automotive Experience ecosystem — fashion as an immersive part of a luxury experience, against a backdrop of extraordinary cars.</p>
+        <p class="src" style="margin:0">Photo: Smart SwimSuits on the runway.</p>
+        <div class="chips dark-chips"><span class="chip">Fashion shows</span><span class="chip">Luxury brands</span><span class="chip">Sponsorships</span><span class="chip">VIP experiences</span><span class="chip">Brand activations</span><span class="chip">Media &amp; content</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="light" id="approach" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">How we work</p><h2 class="h2">Our approach</h2></div>
+    <details open><summary><span>01</span>Understand the business</summary><p>Margins · Pricing · AOV · Customer · Positioning · Inventory · Operations · Capacity</p></details>
+    <details><summary><span>02</span>Understand the customer</summary><p>Desire · Problems · Trust · Objections · Language · Buying behavior</p></details>
+    <details><summary><span>03</span>Build the offer</summary><p>Pricing · Bundles · Promotions · Affiliate commissions · Sampling · LIVE offers · Upsells</p></details>
+    <details><summary><span>04</span>Build the content engine</summary><p>Hooks · Creators · Angles · Formats · Stories · Demonstrations · UGC</p></details>
+    <details><summary><span>05</span>Build distribution</summary><p>Affiliates · Creators · Paid media · Organic · LIVE · Email · Retail · Partnerships</p></details>
+    <details><summary><span>06</span>Scale what works</summary><p>More winning creators · More winning creative · More LIVE · More distribution · Better economics</p></details>
+    <div class="care">
+      <p class="eyebrow" style="margin-bottom:12px">What we measure</p>
+      <div class="chips"><span class="chip">Customers</span><span class="chip">Sales</span><span class="chip">Repeat purchases</span><span class="chip">CAC</span><span class="chip">AOV</span><span class="chip">Margins</span><span class="chip">Conversion</span><span class="chip">Creator productivity</span><span class="chip">Affiliate revenue</span><span class="chip">Content performance</span><span class="chip">Retention</span><span class="chip">Scalability</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">More than an agency</p>
+    <h2 style="margin-top:18px">Not one influencer. <span>An affiliate network.</span> Not one livestream. <span>A sales channel.</span></h2>
+    <p class="lede" style="margin-top:26px">The strongest brands of the next chapter will not depend on one source of traffic. They will build connected distribution — paid, organic, creator, affiliate, LIVE, retail and retention — with data moving between them.</p>
+    <div class="contact"><code id="contactLine">SHOWFLOOR · SSS Studio, 800 Seagate Drive, Naples, FL 34103 · [email] · [phone]</code><button class="btn fill" type="button" id="copy">Copy contact</button></div>
+  </div>
+</section>
+<footer><div class="wrap">SHOWFLOOR · Performance commerce, Naples, Florida · Founder history and awards as supplied by the team · Smart SwimSuits imagery © Smart SwimSuits</div></footer>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // specialists
+  const G=[
+    ['Meta Ads','TikTok Ads','Google Ads','Performance marketing','Media buying','Creative testing','Scaling & optimization'],
+    ['Shopify','TikTok Shop','Amazon & marketplaces','Landing pages & funnels','Conversion-rate optimization','Email & retention','Analytics & attribution'],
+    ['Affiliate recruitment','Affiliate management','Creator outreach','Influencer relationships','Product seeding','UGC systems','Creator performance tracking'],
+    ['Short-form video','Video editing','Photography','Graphic design','Web development','Copywriting','Creative direction','LIVE production','Livestream hosting']
+  ];
+  const renderSpec=i=>{$('#specChips').innerHTML=G[i].map(x=>'<span class="chip">'+x.replace('&','&amp;')+'</span>').join('')};
+  $$('.tabs button').forEach(b=>b.addEventListener('click',()=>{$$('.tabs button').forEach(x=>x.setAttribute('aria-selected','false'));b.setAttribute('aria-selected','true');renderSpec(+b.dataset.g)}));
+  renderSpec(0);
+
+  // affiliate army canvas
+  const cv=$('#armyCanvas'),ctx=cv.getContext('2d');let dots=[],target=10;
+  const size=()=>{const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)};
+  const addDot=()=>{const r=cv.getBoundingClientRect();dots.push({x:r.width/2,y:r.height/2,tx:24+Math.random()*(r.width-48),ty:24+Math.random()*(r.height-48),star:Math.random()<.1,p:0})};
+  function draw(){
+    const r=cv.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);
+    const cx=r.width/2,cy=r.height/2;
+    dots.forEach(d=>{d.p=Math.min(1,d.p+(reduce?1:.04));const x=cx+(d.tx-cx)*d.p,y=cy+(d.ty-cy)*d.p;
+      ctx.strokeStyle=d.star?'rgba(224,78,27,.55)':'rgba(247,244,239,.10)';ctx.lineWidth=d.star?1.4:1;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);ctx.stroke();
+      ctx.fillStyle=d.star?'#F4C84A':'#E04E1B';ctx.beginPath();ctx.arc(x,y,d.star?6:3.6,0,7);ctx.fill();});
+    ctx.fillStyle='#F7F4EF';ctx.beginPath();ctx.arc(cx,cy,22,0,7);ctx.fill();
+    ctx.fillStyle='#14171A';ctx.font='700 11px "JetBrains Mono", monospace';ctx.textAlign='center';ctx.fillText('BRAND',cx,cy+4);
+    requestAnimationFrame(draw);
+  }
+  const setArmy=()=>{target=+$('#army').value;while(dots.length<target)addDot();dots.length=target;
+    $('#armyOut').textContent=target;$('#aVid').textContent=(target*4).toLocaleString('en-US');$('#aAng').textContent=Math.min(10,Math.max(3,Math.round(target/10)+2));$('#aWin').textContent=Math.max(1,Math.round(target/10));};
+  size();addEventListener('resize',size);$('#army').addEventListener('input',setArmy);setArmy();draw();
+
+  // operating model
+  const S=[
+    ['Build the affiliate network','Recruit creators who fit the product and the customer.','media/surf.jpg'],
+    ['Put product in their hands','Sampling, commission structures, education and incentives.','media/flowers.jpg'],
+    ['Create volume','More creators, more content, more angles, more consumer touchpoints.','media/tryon_still.jpg'],
+    ['Identify winners','Which creators, products, hooks, demonstrations and offers produce results?','media/beach_still.jpg'],
+    ['Scale winners with paid media','Years of Meta and performance experience, used to amplify proven creative.','media/pool.jpg'],
+    ['Sell through LIVE','Recurring programming where products are explained and sold in real time.','media/beach.jpg'],
+    ['Build retention','Customer data, email, repeat purchase and cross-sell extend value after acquisition.','media/reef.jpg']
+  ];
+  const wrap=$('#steps');
+  S.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');b.innerHTML='<span>0'+(i+1)+'</span>'+s[0];b.addEventListener('click',()=>setStep(i));wrap.appendChild(b)});
+  function setStep(i){$$('#steps button').forEach((b,k)=>b.setAttribute('aria-selected',k===i?'true':'false'));$('#stN').textContent='Step 0'+(i+1)+' of 07';$('#stT').textContent=S[i][0];$('#stD').textContent=S[i][1];$('#stImg').src=S[i][2]}
+  setStep(0);
+
+  // copy contact
+  $('#copy').addEventListener('click',async e=>{const t=$('#contactLine').textContent;try{await navigator.clipboard.writeText(t);e.target.textContent='Copied'}catch(_){const r=document.createRange();r.selectNodeContents($('#contactLine'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selected'}setTimeout(()=>e.target.textContent='Copy contact',1800)});
+
+  // videos only play in view
+  if(!reduce&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting?x.target.play().catch(()=>{}):x.target.pause()),{threshold:.3});$$('video').forEach(v=>io.observe(v))}
+  else $$('video').forEach(v=>{v.removeAttribute('autoplay');v.pause()});
+})();
+</script>
+
+</body></html>
