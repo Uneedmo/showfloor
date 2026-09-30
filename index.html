@@ -81,6 +81,7 @@ section{padding-block:clamp(72px,10vw,132px)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.05em;padding:9px 13px;border-radius:30px;border:1px solid var(--dark-line);background:#fff}
 .dark-chips .chip{background:transparent;border-color:var(--line);color:var(--text)}
+.dark-chips .chip.hot{background:var(--ember);border-color:var(--ember);color:#fff}
 
 /* founders */
 .founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:start}
@@ -212,12 +213,108 @@ details p{margin-top:10px;padding-left:48px;font-family:var(--mono);font-size:14
 .contact code{font-family:var(--mono);font-size:14px;padding:12px 16px;border-radius:12px;background:var(--ink-2);border:1px solid var(--line)}
 footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.ticker .run{animation:none}*{transition:none!important;scroll-behavior:auto!important}}
+
+/* leader portraits */
+.lhead{display:flex;gap:clamp(16px,2.4vw,26px);align-items:flex-end;margin-top:14px}
+.lhead figure{margin:0;flex:0 0 clamp(104px,13vw,150px);aspect-ratio:3/4;border-radius:18px;overflow:hidden;background:var(--ink-3)}
+.lhead figure img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.lhead .mono{display:grid;place-items:center;height:100%;font-family:var(--display);font-weight:900;font-stretch:115%;font-size:34px;color:var(--lemon)}
+
+/* creative depth */
+.partner{display:flex;gap:clamp(16px,3vw,32px);align-items:center;border-radius:24px;background:var(--dark-text);color:var(--paper);padding:clamp(20px,3vw,34px);margin-bottom:clamp(32px,5vw,56px)}
+.pmono{flex:0 0 clamp(84px,10vw,120px);aspect-ratio:1;border-radius:50%;background:var(--ember);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-stretch:120%;font-size:clamp(30px,4vw,44px);color:#fff}
+.partner h3{font-size:clamp(28px,3.4vw,44px);font-weight:900;font-stretch:112%;text-transform:uppercase;margin:8px 0 10px}
+.partner p.t{color:#D8D2C8;font-size:17px;max-width:64ch}
+.partner .chips{margin-top:16px}
+.partner .chip{background:transparent;border-color:#3A4047;color:var(--paper)}
+@media (max-width:700px){.partner{flex-direction:column;align-items:flex-start}}
+.vd{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.vd .side{border-radius:22px;padding:clamp(16px,2.4vw,24px);border:1px solid var(--dark-line);background:#fff;min-width:0}
+.vd .side.d{background:var(--dark-text);color:var(--paper);border-color:var(--dark-text)}
+.vd h3{font-size:clamp(22px,2.4vw,30px);font-weight:800;text-transform:uppercase;font-stretch:105%}
+.vd .sub{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--dark-muted);margin-top:6px;text-transform:uppercase}
+.vd .d .sub{color:#A7A29A}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin-top:16px;align-content:start;min-height:120px}
+.tile{position:relative;aspect-ratio:3/4;border-radius:8px;overflow:hidden;background:var(--ink-3);animation:pop .3s both}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile span{position:absolute;left:3px;right:3px;bottom:3px;font:700 8px var(--mono);background:rgba(20,23,26,.78);color:#fff;padding:2px 4px;border-radius:4px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+.vdmeter{display:flex;align-items:baseline;gap:12px;margin-top:16px;border-top:1px solid var(--dark-line);padding-top:14px}
+.d .vdmeter{border-color:#3A4047}
+.vdmeter b{font-family:var(--display);font-weight:900;font-size:clamp(44px,5vw,64px);line-height:1;color:var(--ember)}
+.d .vdmeter b{color:var(--lemon)}
+.vdmeter span{font-size:16px}
+.vdctl{margin-top:22px;max-width:520px}
+@media (max-width:820px){.vd{grid-template-columns:1fr}}
+.cov{margin-top:clamp(36px,5vw,56px);border-radius:24px;background:#fff;border:1px solid var(--dark-line);padding:clamp(18px,3vw,30px)}
+.cov .top{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.seg{display:flex;gap:6px}
+.seg button{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:11px 15px;border-radius:30px;border:1.5px solid var(--dark-text);background:transparent;color:var(--dark-text);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--dark-text);color:var(--paper)}
+.covgrid{display:grid;grid-template-columns:minmax(58px,auto) repeat(6,minmax(0,1fr));gap:6px;margin-top:18px}
+.covgrid .h{font:700 10.5px var(--mono);letter-spacing:.05em;color:var(--dark-muted);text-transform:uppercase;display:flex;align-items:center;justify-content:center}
+.covgrid .h.r{justify-content:flex-start}
+.covgrid .c{aspect-ratio:1.5;border-radius:8px;background:var(--sand);display:grid;place-items:center;font:900 clamp(11px,1.6vw,16px) var(--display);transition:background .35s,color .35s}
+.covgrid .c.a{background:var(--ember);color:#fff}
+.covgrid .c.b{background:var(--sea);color:#fff}
+.covstats{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.covstats div{background:var(--sand);border-radius:14px;padding:12px 16px;font-size:15px}
+.covstats b{font-family:var(--display);font-weight:900;font-size:26px;margin-right:6px}
+.nine{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:clamp(36px,5vw,56px)}
+.nine div{border-radius:18px;padding:18px;background:#fff;border:1px solid var(--dark-line);border-top:4px solid var(--c)}
+.nine small{font:700 11px var(--mono);letter-spacing:.1em;color:var(--dark-muted)}
+.nine h4{font-size:clamp(20px,2vw,26px);font-weight:800;margin-top:6px;text-transform:uppercase}
+.nine p{font-size:15.5px;color:var(--dark-muted);margin-top:6px;line-height:1.35}
+@media (max-width:820px){.nine{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.nine{grid-template-columns:1fr}}
+.wrapdepth{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.wrapdepth>div{border-radius:20px;padding:22px;border:1px solid var(--dark-line);background:#fff}
+.wrapdepth .depth{background:var(--ember);border-color:var(--ember);color:#fff}
+.wrapdepth small{font:700 12px var(--mono);letter-spacing:.12em}
+.wrapdepth .chips{margin-top:14px}
+.wrapdepth .wr .chip{text-decoration:line-through;text-decoration-color:var(--ember);color:var(--dark-muted)}
+.wrapdepth .depth .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4);color:#fff}
+.wrapdepth p{margin-top:14px;font-size:16px}
+@media (max-width:820px){.wrapdepth{grid-template-columns:1fr}}
+
+/* bottleneck */
+.sym{display:flex;flex-wrap:wrap;gap:8px}
+.sym button{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;padding:13px 18px;border-radius:30px;border:1.5px solid var(--text);background:transparent;color:var(--text);cursor:pointer}
+.sym button[aria-pressed="true"]{background:var(--ember);border-color:var(--ember);color:#fff}
+.machine{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px}
+.node{padding:14px 16px;border-radius:14px;background:var(--ink-2);border:1.5px solid var(--line);font:800 clamp(16px,1.6vw,20px) var(--display);transition:background .25s,transform .25s,border-color .25s}
+.node.hot{background:var(--ember);border-color:var(--ember);color:#fff;transform:translateY(-3px)}
+.machine i{font-style:normal;color:var(--muted);font-family:var(--mono)}
+.react{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.react>div{border-radius:20px;padding:22px}
+.react .old{background:var(--ink-2);border:1px solid var(--line)}
+.react .old b{text-decoration:line-through;text-decoration-color:var(--ember);text-decoration-thickness:3px}
+.react .new{background:var(--lemon);color:var(--ink)}
+.react small{display:block;font:700 11px var(--mono);letter-spacing:.12em;margin-bottom:8px;opacity:.75}
+.react b{font-family:var(--display);font-weight:900;font-size:clamp(24px,2.6vw,34px);line-height:1.05;display:block}
+@media (max-width:820px){.react{grid-template-columns:1fr}}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(40px,6vw,64px)}
+.fit>div{border-radius:22px;padding:clamp(20px,3vw,30px)}
+.fit h3{font-size:clamp(26px,3vw,38px);font-weight:900;text-transform:uppercase;font-stretch:108%}
+.fit ul{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:10px;font-size:17px}
+.fit li{display:flex;gap:12px}
+.fit li::before{content:"✓";font-family:var(--mono);font-weight:700;color:var(--lemon)}
+.fit .yes{background:var(--sea)}
+.fit .no{background:var(--ink-2);border:1px solid var(--line)}
+.fit .no li::before{content:"✕";color:var(--ember)}
+@media (max-width:820px){.fit{grid-template-columns:1fr}}
+.flow4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.flow4 div{border-top:3px solid var(--ember);padding-top:14px}
+.flow4 small{font:700 12px var(--mono);color:var(--ember);letter-spacing:.1em}
+.flow4 h4{font-size:clamp(20px,2vw,26px);font-weight:800;margin-top:6px}
+.flow4 p{font-size:15.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+@media (max-width:820px){.flow4{grid-template-columns:1fr 1fr}}
 </style>
 
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top">SHOW<b>FLOOR</b></a>
-    <nav aria-label="Sections"><a href="#who">Who we are</a><a href="#founders">Founders</a><a href="#commerce">Commerce</a><a href="#studio">Naples studio</a><a href="#approach">Approach</a></nav>
+    <nav aria-label="Sections"><a href="#who">Who we are</a><a href="#founders">Founders</a><a href="#commerce">Commerce</a><a href="#depth">Creative depth</a><a href="#studio">Naples studio</a><a href="#approach">Approach</a></nav>
     <a class="btn fill" href="#contact">Talk to us</a>
   </div>
 </header>
@@ -269,7 +366,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
   <div class="wrap">
     <div class="head"><p class="eyebrow">Founder experience</p><h2 class="h2">We think like business owners — because we are.</h2></div>
     <div class="founder">
-      <figure><img src="media/runway.jpg" alt="Smart SwimSuits look on the runway"></figure>
+      <figure><img src="media/sasha.webp" alt="Portrait of Sasha Royce" style="object-position:50% 25%"></figure>
       <div>
         <h3 class="name">Sasha Royce</h3>
         <p class="roles">Serial entrepreneur · Brand builder · Growth strategist · Sustainable innovator</p>
@@ -304,7 +401,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
     <div class="leaders">
       <div class="leader">
         <p class="eyebrow">Leadership</p>
-        <h3 style="margin-top:10px">Dima Mo</h3>
+        <div class="lhead"><figure><img src="media/dima.webp" alt="Portrait of Dima Mo"></figure><h3>Dima Mo</h3></div>
         <p class="roles">Entrepreneur · Growth architect · Strategic marketer · 15+ years</p>
         <ul>
           <li>Founded a manufacturing and export business in phytodesign.</li>
@@ -316,7 +413,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
       </div>
       <div class="leader">
         <p class="eyebrow">Leadership</p>
-        <h3 style="margin-top:10px">Julia Grace Jacobson</h3>
+        <div class="lhead"><figure><div class="mono" aria-hidden="true">JGJ</div></figure><h3>Julia Grace Jacobson</h3></div>
         <p class="roles">Fashion designer · Entrepreneur · Producer · 10+ years</p>
         <ul>
           <li>International fashion experience across Miami, New York, Dubai, Paris and Milan.</li>
@@ -360,6 +457,105 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
       <div><small>02</small>Data identifies winners</div><i>→</i>
       <div style="background:var(--lemon);color:var(--ink)"><small style="color:var(--ink)">03</small>Paid media amplifies winners</div>
     </div>
+  </div>
+</section>
+
+<!-- CREATIVE DEPTH -->
+<section class="light" id="depth">
+  <div class="wrap">
+    <div class="partner">
+      <div class="pmono" aria-hidden="true">CC</div>
+      <div>
+        <p class="eyebrow">New on board</p>
+        <h3>Chase Chappell &amp; team</h3>
+        <p class="t">Chase and his team now work alongside SHOWFLOOR. They bring the paid-media and creative-depth playbook — Ads Mastery, Creator Armies and the Rush Method — and look at the whole machine, not just the ad account.</p>
+        <div class="chips"><span class="chip">Ads Mastery</span><span class="chip">Creator Armies</span><span class="chip">Rush Method</span><span class="chip">Meta</span><span class="chip">Creative</span><span class="chip">Shopify CRO</span><span class="chip">Email / SMS</span><span class="chip">TikTok Shop</span><span class="chip">AI automation</span></div>
+      </div>
+    </div>
+
+    <div class="head"><p class="eyebrow">Creative depth</p><h2 class="h2">You don't have a creative volume problem. You have a creative depth problem.</h2><p class="lede">Doing $50k, $100k, $300k+ a month, with one to three ads carrying the account? The instinct is "we need more creative" — new hooks, new creators, a new first three seconds, a static turned into a video. Meta keeps spending on the same ad, because you gave it the same idea again.</p></div>
+
+    <div class="vd">
+      <div class="side">
+        <h3>Volume</h3><p class="sub">One idea · many wrappers</p>
+        <div class="tiles" id="vdVol"></div>
+        <div class="vdmeter"><b>1</b><span>idea for Meta to test</span></div>
+      </div>
+      <div class="side d">
+        <h3>Depth</h3><p class="sub">Many ideas · many reasons to buy</p>
+        <div class="tiles" id="vdDep"></div>
+        <div class="vdmeter"><b id="vdDepK">12</b><span>ideas for Meta to test</span></div>
+      </div>
+    </div>
+    <div class="armyctl vdctl">
+      <label for="vdN"><span>New ads you make</span><output id="vdOut">12</output></label>
+      <input type="range" id="vdN" min="1" max="24" step="1" value="12">
+    </div>
+    <p class="src">37 variations of one idea is still one idea, shown 37 times. Drag to compare. Illustration.</p>
+
+    <div class="wrapdepth">
+      <div class="wr"><small>WRAPPER CHANGES · SAME REASON TO BUY</small><div class="chips"><span class="chip">New hook</span><span class="chip">New first 3 seconds</span><span class="chip">New headline</span><span class="chip">Static → video</span><span class="chip">Video → static</span><span class="chip">Another creator, same pitch</span></div><p style="color:var(--dark-muted)">Cheap to make, easy to feel busy with — and Meta reads it as the same thing.</p></div>
+      <div class="depth"><small>DEPTH CHANGES · NEW REASON TO BUY</small><div class="chips"><span class="chip">Different customer</span><span class="chip">Different pain</span><span class="chip">Different awareness</span><span class="chip">Different use case</span><span class="chip">Different offer</span><span class="chip">Different landing experience</span></div><p>Each one gives Meta a new place to find a customer as you scale.</p></div>
+    </div>
+
+    <div class="cov">
+      <div class="top">
+        <div><p class="eyebrow">Coverage map · illustration</p><p style="margin-top:6px;font-size:16px;color:var(--dark-muted)">Awareness level × customer avatar. Each square is a different reason someone might buy.</p></div>
+        <div class="seg" role="group" aria-label="Account view"><button type="button" aria-pressed="true" data-m="today">Today</button><button type="button" aria-pressed="false" data-m="depth">With depth</button></div>
+      </div>
+      <div class="covgrid" id="covGrid"></div>
+      <div class="covstats"><div><b id="covAds">50</b>ads live</div><div><b id="covCells">3</b>of 30 squares covered</div></div>
+    </div>
+
+    <div class="nine">
+      <div style="--c:#E04E1B"><small>01</small><h4>ICPs</h4><p>Who exactly is this for?</p></div>
+      <div style="--c:#F4C84A"><small>02</small><h4>Avatars</h4><p>Which person inside that segment?</p></div>
+      <div style="--c:#1F6F5C"><small>03</small><h4>Awareness levels</h4><p>Do they even know they have the problem?</p></div>
+      <div style="--c:#E04E1B"><small>04</small><h4>Pain points</h4><p>What hurts enough to act?</p></div>
+      <div style="--c:#F4C84A"><small>05</small><h4>Use cases</h4><p>When and where does it get used?</p></div>
+      <div style="--c:#1F6F5C"><small>06</small><h4>Angles</h4><p>What is the reason to believe?</p></div>
+      <div style="--c:#E04E1B"><small>07</small><h4>Offers</h4><p>What makes yes easy?</p></div>
+      <div style="--c:#F4C84A"><small>08</small><h4>Creators</h4><p>Whose voice makes it credible?</p></div>
+      <div style="--c:#1F6F5C"><small>09</small><h4>Landing experiences</h4><p>What do they see after the click?</p></div>
+    </div>
+    <p class="lede" style="margin-top:32px">That is why we build Creator Armies: not because UGC fixes everything overnight, but because the right creators plus real depth give Meta more places to find customers as spend grows.</p>
+  </div>
+</section>
+
+<!-- BOTTLENECK -->
+<section id="machine">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Before you change the ads</p><h2 class="h2">Is Meta really the bottleneck?</h2><p class="lede">CAC up? Change the ads. ROAS down? Change the ads. Scaling stalled? Change the ads. That is a business constraint being treated with an ad-account tactic. Pick a symptom and see where we look first.</p></div>
+    <div class="sym" role="group" aria-label="Symptom"><button type="button" aria-pressed="true" data-s="0">CAC goes up</button><button type="button" aria-pressed="false" data-s="1">ROAS drops</button><button type="button" aria-pressed="false" data-s="2">Scaling stalls</button></div>
+    <div class="react">
+      <div class="old"><small>THE USUAL REACTION</small><b>Change the ads.</b></div>
+      <div class="new"><small>OUR FIRST QUESTION</small><b>What is actually holding the business back?</b></div>
+    </div>
+    <p class="eyebrow" style="margin:32px 0 12px">Suspects</p>
+    <div class="chips dark-chips" id="suspects"></div>
+    <p class="eyebrow" style="margin:32px 0 0">The whole machine</p>
+    <div class="machine" id="machineFlow"></div>
+    <p class="src">Illustrative checklist, not a diagnosis — the real answer starts with your numbers.</p>
+
+    <div class="fit">
+      <div class="yes">
+        <h3>A good fit if</h3>
+        <ul><li>You have already proven people want what you sell.</li><li>You are doing real numbers.</li><li>You know there is another level, but cannot see what is keeping you from it.</li></ul>
+      </div>
+      <div class="no">
+        <h3>Probably not if</h3>
+        <ul><li>You want someone to babysit your Facebook ads.</li><li>You want a pretty report every Friday.</li></ul>
+        <p style="margin-top:18px;color:var(--muted);font-size:16px">We are not for every brand — and we will tell you when we are not the right one.</p>
+      </div>
+    </div>
+    <p class="eyebrow" style="margin:48px 0 0">What a first conversation looks like</p>
+    <div class="flow4">
+      <div><small>01</small><h4>Where you are</h4><p>Numbers, channels, team, constraints.</p></div>
+      <div><small>02</small><h4>Where you're going</h4><p>The next level you can see but cannot reach.</p></div>
+      <div><small>03</small><h4>What stands between</h4><p>Offer, page, retention, creative, positioning, creators.</p></div>
+      <div><small>04</small><h4>A plan — or an honest no</h4><p>If we can help, we show exactly what it looks like. If not, we say so.</p></div>
+    </div>
+    <div class="ctas" style="margin-top:32px"><a class="btn fill" href="#contact">Book a strategy call</a></div>
   </div>
 </section>
 
@@ -500,6 +696,43 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
   const renderSpec=i=>{$('#specChips').innerHTML=G[i].map(x=>'<span class="chip">'+x.replace('&','&amp;')+'</span>').join('')};
   $$('.tabs button').forEach(b=>b.addEventListener('click',()=>{$$('.tabs button').forEach(x=>x.setAttribute('aria-selected','false'));b.setAttribute('aria-selected','true');renderSpec(+b.dataset.g)}));
   renderSpec(0);
+
+  // volume vs depth
+  const VI=['beach','pool','reef','runway','surf','flowers','tryon_still','beach_still'];
+  const VD=['ICP','Avatar','Awareness','Pain point','Use case','Angle','Offer','Creator','Landing page'];
+  function renderVD(){
+    const n=+$('#vdN').value;$('#vdOut').textContent=n;$('#vdDepK').textContent=n;
+    $('#vdVol').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/beach.jpg" alt="" loading="lazy" style="object-position:'+(25+(i*17)%50)+'% '+((i*23)%60)+'%;filter:hue-rotate('+((i%5-2)*4)+'deg)"><span>hook v'+(i+1)+'</span></div>').join('');
+    $('#vdDep').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/'+VI[i%8]+'.jpg" alt="" loading="lazy"><span>'+VD[i%9]+'</span></div>').join('');
+  }
+  $('#vdN').addEventListener('input',renderVD);renderVD();
+
+  // coverage map
+  const AW=['Unaware','Problem','Solution','Product','Most'];
+  function renderCov(mode){
+    const d={};
+    if(mode==='today'){d['1,0']=37;d['2,0']=9;d['1,1']=4}
+    else for(let r=0;r<5;r++)for(let c=0;c<6;c++)if((r+c)%5!==4)d[r+','+c]=2+((r*6+c)<2?1:0);
+    let h='<div class="h"></div>'+[1,2,3,4,5,6].map(i=>'<div class="h">0'+i+'</div>').join('');
+    for(let r=0;r<5;r++){h+='<div class="h r">'+AW[r]+'</div>';for(let c=0;c<6;c++){const v=d[r+','+c];h+='<div class="c'+(v?(mode==='today'?' a':' b'):'')+'">'+(v?'×'+v:'')+'</div>'}}
+    $('#covGrid').innerHTML=h;
+    const vals=Object.values(d);$('#covAds').textContent=vals.reduce((a,b)=>a+b,0);$('#covCells').textContent=vals.length;
+    $$('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===mode?'true':'false'));
+  }
+  $$('.seg button').forEach(b=>b.addEventListener('click',()=>renderCov(b.dataset.m)));renderCov('today');
+
+  // bottleneck
+  const SUS={'Offer':'Shopify CRO','Landing page':'Shopify CRO','Conversion rate':'Shopify CRO','Retention':'Email / SMS','Creative strategy':'Creative','Positioning':'Creative','Creator pipeline':'Creator army'};
+  const SYM=[['Positioning','Offer','Landing page','Conversion rate','Creative strategy'],['Offer','Conversion rate','Retention','Creative strategy'],['Creative strategy','Creator pipeline','Positioning','Retention']];
+  const NODES=['Meta','Creative','Shopify CRO','Email / SMS','TikTok Shop','Creator army','AI automation'];
+  function renderSym(i){
+    $$('.sym button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.s===i?'true':'false'));
+    const hot=SYM[i];
+    $('#suspects').innerHTML=Object.keys(SUS).map(k=>'<span class="chip'+(hot.includes(k)?' hot':'')+'">'+k+'</span>').join('');
+    const hn=new Set(hot.map(k=>SUS[k]));
+    $('#machineFlow').innerHTML=NODES.map(n=>'<span class="node'+(hn.has(n)?' hot':'')+'">'+n+'</span>').join('<i>→</i>');
+  }
+  $$('.sym button').forEach(b=>b.addEventListener('click',()=>renderSym(+b.dataset.s)));renderSym(0);
 
   // affiliate army canvas
   const cv=$('#armyCanvas'),ctx=cv.getContext('2d');let dots=[],target=10;
