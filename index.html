@@ -309,12 +309,24 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
 .flow4 h4{font-size:clamp(20px,2vw,26px);font-weight:800;margin-top:6px}
 .flow4 p{font-size:15.5px;color:var(--muted);margin-top:6px;line-height:1.35}
 @media (max-width:820px){.flow4{grid-template-columns:1fr 1fr}}
+
+/* proof */
+.vwall{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;margin-inline:calc(-1*clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px);scrollbar-width:thin}
+.vcard{flex:0 0 clamp(190px,23vw,264px);scroll-snap-align:start;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:464/848;background:var(--ink-2)}
+.vcard video{width:100%;height:100%;object-fit:cover}
+.vcard .badge{background:rgba(0,0,0,.6)}
+.vcard .badge.hot{background:#FE2C55}
+.vcard button{position:absolute;right:10px;bottom:10px;font:700 11px var(--mono);letter-spacing:.08em;color:#fff;background:rgba(20,23,26,.75);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:7px 11px;cursor:pointer}
+.look{column-count:4;column-gap:10px;margin-top:clamp(40px,6vw,64px)}
+.look img{width:100%;border-radius:14px;margin-bottom:10px;break-inside:avoid;background:var(--ink-2)}
+@media (max-width:900px){.look{column-count:3}}
+@media (max-width:560px){.look{column-count:2}}
 </style>
 
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top">SHOW<b>FLOOR</b></a>
-    <nav aria-label="Sections"><a href="#who">Who we are</a><a href="#founders">Founders</a><a href="#commerce">Commerce</a><a href="#depth">Creative depth</a><a href="#studio">Naples studio</a><a href="#approach">Approach</a></nav>
+    <nav aria-label="Sections"><a href="#who">Who we are</a><a href="#founders">Founders</a><a href="#proof">Proof</a><a href="#commerce">Commerce</a><a href="#depth">Creative depth</a><a href="#studio">Naples studio</a><a href="#approach">Approach</a></nav>
     <a class="btn fill" href="#contact">Talk to us</a>
   </div>
 </header>
@@ -328,8 +340,8 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
       <div class="ctas"><a class="btn fill" href="#contact">Book a strategy call</a><a class="btn" href="#commerce">See how it works</a></div>
     </div>
     <div class="reel">
-      <figure><video src="media/ugc_tryon.mp4" poster="media/tryon_still.jpg" autoplay muted loop playsinline aria-label="Creator try-on video"></video><span class="badge">LIVE</span><figcaption>Creator try-on · Smart SwimSuits</figcaption></figure>
-      <figure><video src="media/ugc_beach.mp4" poster="media/beach_still.jpg" autoplay muted loop playsinline aria-label="Creator beach video"></video><span class="badge alt">AFFILIATE</span><figcaption>Creator content · Smart SwimSuits</figcaption></figure>
+      <figure><video src="media/runway-1.mp4" poster="media/runway-1.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Runway show video"></video><span class="badge">RUNWAY</span></figure>
+      <figure><video src="media/review-short.mp4" poster="media/review.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Creator review video"></video><span class="badge alt">CREATOR REVIEW</span><figcaption>Creator content · Smart SwimSuits</figcaption></figure>
     </div>
   </div>
 </section>
@@ -366,7 +378,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
   <div class="wrap">
     <div class="head"><p class="eyebrow">Founder experience</p><h2 class="h2">We think like business owners — because we are.</h2></div>
     <div class="founder">
-      <figure><img src="media/sasha.webp" alt="Portrait of Sasha Royce" style="object-position:50% 25%"></figure>
+      <figure><img src="media/sasha.jpg" alt="Portrait of Sasha Royce" style="object-position:50% 22%"></figure>
       <div>
         <h3 class="name">Sasha Royce</h3>
         <p class="roles">Serial entrepreneur · Brand builder · Growth strategist · Sustainable innovator</p>
@@ -413,7 +425,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
       </div>
       <div class="leader">
         <p class="eyebrow">Leadership</p>
-        <div class="lhead"><figure><img src="media/julia.webp" alt="Portrait of Julia Grace Jacobson"></figure><h3>Julia Grace Jacobson</h3></div>
+        <div class="lhead"><figure><img src="media/julia.jpg" alt="Portrait of Julia Grace Jacobson"></figure><h3>Julia Grace Jacobson</h3></div>
         <p class="roles">Fashion designer · Entrepreneur · Producer · 10+ years</p>
         <ul>
           <li>International fashion experience across Miami, New York, Dubai, Paris and Milan.</li>
@@ -441,6 +453,42 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
       </div>
       <div class="panel" role="tabpanel" aria-live="polite"><div class="chips" id="specChips"></div></div>
     </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Proof in motion</p><h2 class="h2">The raw material already exists.</h2><p class="lede">Miami Swim Week runway, a creator review, location shoots — one product seen through many different eyes. This is what an affiliate network and a LIVE channel are built from. Tap a video for sound, swipe for more.</p></div>
+  </div>
+  <div class="wrap">
+    <div class="vwall">
+      <div class="vcard"><video src="media/runway-2.mp4" poster="media/runway-2.jpg" autoplay muted loop playsinline preload="none"></video><span class="badge">RUNWAY</span><button type="button">SOUND</button></div>
+      <div class="vcard"><video src="media/runway-3.mp4" poster="media/runway-3.jpg" autoplay muted loop playsinline preload="none"></video><span class="badge">RUNWAY</span><button type="button">SOUND</button></div>
+      <div class="vcard"><video src="media/review.mp4" poster="media/review.jpg" autoplay muted loop playsinline preload="none"></video><span class="badge hot">CREATOR REVIEW</span><button type="button">SOUND</button></div>
+      <div class="vcard"><video src="media/runway-4.mp4" poster="media/runway-4.jpg" autoplay muted loop playsinline preload="none"></video><span class="badge">RUNWAY</span><button type="button">SOUND</button></div>
+      <div class="vcard"><video src="media/runway-5.mp4" poster="media/runway-5.jpg" autoplay muted loop playsinline preload="none"></video><span class="badge">RUNWAY</span><button type="button">SOUND</button></div>
+    </div>
+    <div class="look" aria-label="Lookbook">
+      <img src="media/shoot-09.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-12.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-10.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-15.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-19.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-14.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-17.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-13.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-21.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-16.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-20.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-25.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-23.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-18.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-22.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-11.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+      <img src="media/shoot-24.jpg" alt="Smart SwimSuits shoot" loading="lazy">
+    </div>
+    <p class="src">Smart SwimSuits imagery and video © Smart SwimSuits.</p>
   </div>
 </section>
 
@@ -611,7 +659,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
     <div class="model">
       <div class="steps" role="tablist" aria-label="Operating model" id="steps"></div>
       <div class="stepcard" aria-live="polite">
-        <img id="stImg" src="media/surf.jpg" alt="">
+        <img id="stImg" src="media/shoot-18.jpg" alt="">
         <div class="in"><p class="eyebrow" id="stN">Step 01</p><h3 id="stT" style="margin-top:8px">Build the affiliate network</h3><p id="stD">Recruit creators who fit the product and the customer.</p></div>
       </div>
     </div>
@@ -698,12 +746,12 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
   renderSpec(0);
 
   // volume vs depth
-  const VI=['beach','pool','reef','runway','surf','flowers','tryon_still','beach_still'];
+  const VI=['shoot-09','shoot-12','shoot-10','shoot-15','shoot-19','shoot-14','shoot-17','shoot-13','shoot-21','shoot-16','shoot-20','shoot-25','shoot-23','shoot-18','shoot-22','shoot-11','shoot-24'];
   const VD=['ICP','Avatar','Awareness','Pain point','Use case','Angle','Offer','Creator','Landing page'];
   function renderVD(){
     const n=+$('#vdN').value;$('#vdOut').textContent=n;$('#vdDepK').textContent=n;
-    $('#vdVol').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/beach.jpg" alt="" loading="lazy" style="object-position:'+(25+(i*17)%50)+'% '+((i*23)%60)+'%;filter:hue-rotate('+((i%5-2)*4)+'deg)"><span>hook v'+(i+1)+'</span></div>').join('');
-    $('#vdDep').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/'+VI[i%8]+'.jpg" alt="" loading="lazy"><span>'+VD[i%9]+'</span></div>').join('');
+    $('#vdVol').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/shoot-12.jpg" alt="" loading="lazy" style="object-position:'+(25+(i*17)%50)+'% '+((i*23)%60)+'%;filter:hue-rotate('+((i%5-2)*4)+'deg)"><span>hook v'+(i+1)+'</span></div>').join('');
+    $('#vdDep').innerHTML=Array.from({length:n},(_,i)=>'<div class="tile"><img src="media/'+VI[i%VI.length]+'.jpg" alt="" loading="lazy"><span>'+VD[i%9]+'</span></div>').join('');
   }
   $('#vdN').addEventListener('input',renderVD);renderVD();
 
@@ -754,18 +802,21 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-family:var(--mon
 
   // operating model
   const S=[
-    ['Build the affiliate network','Recruit creators who fit the product and the customer.','media/surf.jpg'],
-    ['Put product in their hands','Sampling, commission structures, education and incentives.','media/flowers.jpg'],
-    ['Create volume','More creators, more content, more angles, more consumer touchpoints.','media/tryon_still.jpg'],
-    ['Identify winners','Which creators, products, hooks, demonstrations and offers produce results?','media/beach_still.jpg'],
-    ['Scale winners with paid media','Years of Meta and performance experience, used to amplify proven creative.','media/pool.jpg'],
-    ['Sell through LIVE','Recurring programming where products are explained and sold in real time.','media/beach.jpg'],
-    ['Build retention','Customer data, email, repeat purchase and cross-sell extend value after acquisition.','media/reef.jpg']
+    ['Build the affiliate network','Recruit creators who fit the product and the customer.','media/shoot-18.jpg'],
+    ['Put product in their hands','Sampling, commission structures, education and incentives.','media/shoot-13.jpg'],
+    ['Create volume','More creators, more content, more angles, more consumer touchpoints.','media/shoot-10.jpg'],
+    ['Identify winners','Which creators, products, hooks, demonstrations and offers produce results?','media/shoot-22.jpg'],
+    ['Scale winners with paid media','Years of Meta and performance experience, used to amplify proven creative.','media/shoot-14.jpg'],
+    ['Sell through LIVE','Recurring programming where products are explained and sold in real time.','media/shoot-17.jpg'],
+    ['Build retention','Customer data, email, repeat purchase and cross-sell extend value after acquisition.','media/shoot-19.jpg']
   ];
   const wrap=$('#steps');
   S.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');b.innerHTML='<span>0'+(i+1)+'</span>'+s[0];b.addEventListener('click',()=>setStep(i));wrap.appendChild(b)});
   function setStep(i){$$('#steps button').forEach((b,k)=>b.setAttribute('aria-selected',k===i?'true':'false'));$('#stN').textContent='Step 0'+(i+1)+' of 07';$('#stT').textContent=S[i][0];$('#stD').textContent=S[i][1];$('#stImg').src=S[i][2]}
   setStep(0);
+
+  // video wall: tap sound toggles audio on that card, mutes the rest
+  $$('.vcard button').forEach(b=>b.addEventListener('click',()=>{const v=b.parentNode.querySelector('video'),on=v.muted;$$('.vcard video').forEach(x=>{x.muted=true});$$('.vcard button').forEach(x=>x.textContent='SOUND');if(on){v.muted=false;v.play().catch(()=>{});b.textContent='MUTE'}}));
 
   // copy contact
   $('#copy').addEventListener('click',async e=>{const t=$('#contactLine').textContent;try{await navigator.clipboard.writeText(t);e.target.textContent='Copied'}catch(_){const r=document.createRange();r.selectNodeContents($('#contactLine'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selected'}setTimeout(()=>e.target.textContent='Copy contact',1800)});
