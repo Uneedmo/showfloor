@@ -1,0 +1,1002 @@
+<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex, nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>SallyeAnder × SHOWFLOOR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --sand:#F3ECDD; --paper:#FBF7EE; --navy:#1F3A2B; --navy-2:#2B4E3A; --coral:#D9572A; --sea:#3E7D5A; --lemon:#E8B83A; --blush:#F3D9C7;
+  --ink:#1F2A22; --muted:#5F6658; --line:#E2D6BF; --on-dark:#F4EEDF; --on-dark-muted:#B9C6B3;
+  --kraft:#C8A27A;
+  --display:'Zilla Slab', Rockwell, 'Courier New', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --r:18px; --wrap:1180px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.lede{font-size:clamp(18px,1.6vw,21px);color:var(--muted);max-width:62ch}
+.dark .lede{color:var(--on-dark-muted)}
+section{padding-block:clamp(64px,9vw,120px)}
+.dark{background:var(--navy);color:var(--on-dark)}
+.paper{background:var(--paper)}
+.sea{background:var(--sea);color:#F4FBF9}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:22px;letter-spacing:.02em}
+.dark .src,.sea .src{color:var(--on-dark-muted)}
+.sea .src{color:#CBEDE7}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+
+/* tile band that echoes the packaging */
+.tiles{height:34px;background-color:var(--navy);
+  background-image:
+    radial-gradient(circle at 50% 0,var(--sea) 0 9px,transparent 10px),
+    radial-gradient(circle at 50% 100%,var(--sea) 0 9px,transparent 10px),
+    radial-gradient(circle at 0 50%,var(--coral) 0 9px,transparent 10px),
+    radial-gradient(circle at 100% 50%,var(--coral) 0 9px,transparent 10px),
+    radial-gradient(circle at 50% 50%,var(--lemon) 0 4px,transparent 5px);
+  background-size:34px 34px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(251,243,230,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.brand{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.14em}
+.brand b{color:var(--coral)}
+.nav nav{display:flex;gap:18px;font-size:14px;font-weight:600}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;background:var(--coral);width:0}
+@media (max-width:760px){.nav nav{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(40px,6vw,80px) clamp(56px,7vw,96px)}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,104px);font-weight:800;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero .lede{margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:8px 12px;border-radius:40px;background:var(--paper);border:1px solid var(--line)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;padding:14px 22px;border-radius:40px;text-decoration:none;border:2px solid var(--navy);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--navy);color:var(--sand)}
+.btn.coral{background:var(--coral);border-color:var(--coral);color:#fff}
+
+/* phone */
+.phone{position:relative;width:min(340px,100%);margin-inline:auto;aspect-ratio:9/17.5;border-radius:44px;background:#0A1624;padding:12px;box-shadow:0 30px 60px -20px rgba(15,42,68,.45)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:34px;background:#1b2a38}
+.live{position:absolute;top:30px;left:28px;display:flex;align-items:center;gap:8px}
+.live span{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:#fff;background:#FE2C55;padding:4px 8px;border-radius:6px}
+.live i{font-style:normal;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:4px 8px;border-radius:6px}
+.cart{position:absolute;left:24px;right:24px;bottom:28px;display:flex;align-items:center;gap:10px;background:rgba(255,252,246,.95);border-radius:16px;padding:9px}
+.cart img{width:52px;height:52px;border-radius:10px;object-fit:cover}
+.cart div{flex:1;min-width:0}
+.cart b{display:block;font-size:13px;line-height:1.2}
+.cart small{font-family:var(--mono);font-size:12px;color:var(--coral);font-weight:700}
+.cart button{font:inherit;font-size:12px;font-weight:700;border:0;border-radius:30px;background:var(--coral);color:#fff;padding:8px 11px;cursor:pointer}
+.sold{position:absolute;right:-18px;top:38%;background:var(--lemon);color:var(--navy);font-family:var(--display);font-weight:800;font-size:15px;line-height:1.1;padding:12px 14px;border-radius:16px;transform:rotate(6deg);box-shadow:0 10px 24px -10px rgba(15,42,68,.5)}
+@media (max-width:860px){.hero .grid{grid-template-columns:1fr}.sold{right:6px}}
+
+/* big numbers */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,32px);margin-top:44px}
+.stat{border-top:2px solid rgba(246,239,227,.25);padding-top:18px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(46px,6vw,80px);line-height:1;color:var(--lemon);font-variant-numeric:tabular-nums}
+.stat p{margin-top:10px;color:var(--on-dark-muted)}
+@media (max-width:720px){.stats{grid-template-columns:1fr}}
+
+.h2{font-size:clamp(34px,4.6vw,62px);font-weight:800}
+.head{display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(28px,4vw,44px)}
+
+/* bar charts */
+.bars{display:flex;flex-direction:column;gap:14px}
+.bar{display:grid;grid-template-columns:minmax(120px,280px) 1fr 90px;gap:16px;align-items:center}
+.bar .lbl{font-weight:600;font-size:16px;line-height:1.25}
+.bar .lbl small{display:block;font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:500}
+.track{height:34px;background:rgba(15,42,68,.07);border-radius:10px;overflow:hidden}
+.fill{height:100%;border-radius:10px;background:var(--navy-2);width:var(--w);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.bar.hi .fill{background:var(--coral)}
+.bar .val{font-family:var(--mono);font-weight:700;font-size:16px;text-align:right;font-variant-numeric:tabular-nums}
+.bar.hi .lbl,.bar.hi .val{color:var(--coral)}
+@media (max-width:640px){.bar{grid-template-columns:1fr 72px}.bar .track{grid-column:1/-1;order:3}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+
+/* soap #1 */
+.no1 .big{font-family:var(--display);font-weight:800;font-size:clamp(90px,14vw,190px);line-height:.85;color:var(--coral);letter-spacing:-.05em}
+.no1 .photo{border-radius:var(--r);overflow:hidden;aspect-ratio:1;background:#eee}
+.no1 .photo img{width:100%;height:100%;object-fit:cover}
+
+/* table */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);background:var(--paper);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:16px 18px;border-bottom:1px solid var(--line);text-align:center;font-variant-numeric:tabular-nums}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+th:first-child,td:first-child{text-align:left}
+td{font-family:var(--mono);font-weight:700;font-size:17px}
+td:first-child{font-family:var(--body);font-weight:600}
+td.hot{color:var(--coral)}
+tr:last-child td{border-bottom:0}
+.callout{display:flex;gap:24px;align-items:center;background:var(--navy);color:var(--on-dark);border-radius:var(--r);padding:24px 28px;margin-top:18px}
+.callout b{font-family:var(--display);font-size:clamp(40px,5vw,60px);color:var(--lemon);line-height:1}
+@media (max-width:640px){.callout{flex-direction:column;align-items:flex-start}}
+
+/* shops */
+.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.shop{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.shop b{display:block;font-family:var(--display);font-size:clamp(30px,3.4vw,42px);font-weight:800;line-height:1}
+.shop span{font-weight:600;color:var(--muted);font-size:15px}
+.shop.top{background:var(--coral);color:#fff;border-color:var(--coral)}
+.shop.top span{color:#FFE3D8}
+@media (max-width:720px){.shops{grid-template-columns:1fr 1fr}}
+
+/* status */
+.status{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.st{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px}
+.st h3{font-size:22px;font-weight:700}
+.st p{color:var(--muted);font-size:15.5px;margin-top:8px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:30px;margin-bottom:12px}
+.ok{background:#D6F0EB;color:#12695F}.no{background:#FDDDD2;color:#B23B18}
+.st.miss{border:2px dashed var(--coral);background:#FFF4EE}
+@media (max-width:860px){.status{grid-template-columns:1fr 1fr}}
+
+/* founder */
+.founder .split{grid-template-columns:.95fr 1.05fr}
+.portrait{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;margin-inline:auto}
+.portrait .disc{position:absolute;inset:8% 4% 0 4%;border-radius:50%;background:
+  radial-gradient(circle at 50% 50%, rgba(15,42,68,0) 58%, rgba(15,42,68,.0) 59%),
+  conic-gradient(from 20deg,var(--sea),var(--lemon),var(--coral),var(--sea))}
+.portrait .disc::after{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--navy-2)}
+.portrait img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto;max-width:none;z-index:1}
+.portrait .tag{position:absolute;z-index:2;left:6%;bottom:6%;background:var(--paper);color:var(--navy);padding:10px 16px;border-radius:40px;font-weight:700;font-size:15px;box-shadow:0 10px 20px -10px rgba(0,0,0,.4)}
+.quote{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,42px);line-height:1.12;margin-top:22px}
+.quote span{color:var(--lemon)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.facts div{border-top:2px solid rgba(246,239,227,.2);padding-top:12px}
+.facts b{display:block;font-family:var(--display);font-size:30px;color:var(--coral)}
+.facts span{font-size:14.5px;color:var(--on-dark-muted)}
+@media (max-width:860px){.founder .split{grid-template-columns:1fr}}
+
+/* store */
+.store{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:28px;overflow:hidden;background:var(--paper);border:1px solid var(--line)}
+.store img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.store div{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+@media (max-width:860px){.store{grid-template-columns:1fr}}
+
+/* product explorer */
+.explorer{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(20px,4vw,48px);align-items:center}
+.tabs{display:flex;flex-direction:column;gap:10px}
+.tab{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;padding:12px;border-radius:16px;border:1px solid var(--line);background:var(--paper);transition:border-color .2s,transform .2s}
+.tab:hover{transform:translateX(4px)}
+.tab img{width:58px;height:58px;border-radius:12px;object-fit:cover;background:#fff}
+.tab b{display:block;font-size:17px}
+.tab small{font-family:var(--mono);color:var(--muted);font-size:12.5px}
+.tab[aria-selected="true"]{border:2px solid var(--coral);background:#FFF1EA}
+.stage{position:relative;background:var(--paper);border-radius:28px;border:1px solid var(--line);overflow:hidden}
+.stage img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#fff}
+.stage .info{padding:22px 26px;display:flex;justify-content:space-between;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.stage .price{font-family:var(--display);font-weight:800;font-size:clamp(44px,5vw,64px);color:var(--coral);line-height:1}
+.stage .role{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-weight:700}
+.stage h3{font-size:28px;margin-top:6px}
+.stage p{color:var(--muted);max-width:44ch;margin-top:6px;font-size:16px}
+@media (max-width:860px){.explorer{grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:1fr 1fr}}
+
+/* plastic counter */
+.plastic .split{grid-template-columns:1.2fr .8fr}
+.plastic .h2{color:#fff}
+.counter{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.counter div{background:rgba(255,255,255,.1);border-radius:18px;padding:18px 20px}
+.counter b{display:block;font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1;font-variant-numeric:tabular-nums}
+.counter span{font-size:15px;color:#D6F1EC}
+.ctrl{margin-top:22px;display:flex;flex-direction:column;gap:14px}
+.ctrl label{display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:15px}
+.ctrl output{font-family:var(--mono);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--lemon);height:28px}
+.plastic figure{margin:0;border-radius:28px;overflow:hidden;aspect-ratio:9/13;max-width:360px;justify-self:center}
+.plastic figure img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.plastic .split{grid-template-columns:1fr}}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,44px);background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(20px,4vw,40px)}
+.calc .ctrl label{color:var(--ink)}
+.calc input[type=range]{accent-color:var(--coral)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{font:inherit;font-weight:700;font-size:14px;padding:9px 14px;border-radius:30px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--sand)}
+.stack{display:flex;height:64px;border-radius:14px;overflow:hidden;margin-top:6px}
+.stack div{height:100%;transition:flex-basis .35s ease;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;overflow:hidden;white-space:nowrap}
+.legend{display:grid;grid-template-columns:1fr auto;gap:8px 16px;margin-top:18px;font-variant-numeric:tabular-nums}
+.legend span{display:flex;align-items:center;gap:10px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.legend b{font-family:var(--mono);text-align:right}
+.legend .total{border-top:2px solid var(--navy);padding-top:10px;font-weight:700}
+.legend .total b{color:var(--coral);font-size:22px}
+.vs{margin-top:22px;padding:16px 18px;border-radius:16px;background:#EAF6F3;color:#0E5A51;font-size:15.5px}
+.vs b{font-family:var(--mono)}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+
+/* stages */
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stg{border-radius:22px;padding:26px;background:var(--navy-2);border-top:6px solid var(--coral)}
+.stg small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--lemon);font-weight:700}
+.stg h3{font-size:28px;margin:10px 0}
+.stg p{color:var(--on-dark-muted);font-size:16px}
+@media (max-width:860px){.stages{grid-template-columns:1fr}}
+.months{margin-top:36px}
+.mtabs{display:flex;gap:8px;flex-wrap:wrap}
+.mtabs button{font:inherit;font-weight:700;font-family:var(--mono);font-size:13px;letter-spacing:.06em;padding:10px 16px;border-radius:30px;border:1.5px solid rgba(246,239,227,.35);background:transparent;color:var(--on-dark);cursor:pointer}
+.mtabs button[aria-selected="true"]{background:var(--lemon);color:var(--navy);border-color:var(--lemon)}
+.mpanel{margin-top:16px;background:rgba(255,255,255,.06);border-radius:18px;padding:22px 24px;font-size:18px;min-height:96px}
+
+
+/* stage 2 engines */
+.engines{display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:stretch}
+.lane{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:20px 22px;transition:opacity .25s,border-color .25s,box-shadow .25s}
+.lane .tagl{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.lane.a .tagl{color:var(--coral)} .lane.b .tagl{color:#2E6BD6}
+.flow{display:flex;align-items:stretch;gap:10px;margin-top:12px}
+.flow .step{flex:1;border-radius:14px;padding:14px 16px;font-weight:600;font-size:15.5px;line-height:1.3}
+.lane.a .step{background:#FFF0E9}.lane.b .step{background:#EAF1FD}
+.flow .step small{display:block;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.06em;margin-bottom:6px;color:var(--muted)}
+.flow .arr{align-self:center;font-family:var(--mono);font-weight:700;color:var(--muted)}
+.hub{grid-row:span 2;background:var(--navy);color:var(--on-dark);border-radius:22px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.hub b{font-family:var(--display);font-size:clamp(46px,5vw,64px);line-height:1;color:var(--lemon)}
+.hub small{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--on-dark-muted)}
+.engines.fa .lane.b,.engines.fb .lane.a{opacity:.35}
+.engines.fa .lane.a{border-color:var(--coral);box-shadow:0 0 0 2px var(--coral)}
+.engines.fb .lane.b{border-color:#2E6BD6;box-shadow:0 0 0 2px #2E6BD6}
+@media (max-width:860px){.engines{grid-template-columns:1fr}.hub{grid-row:auto}.flow{flex-direction:column}.flow .arr{transform:rotate(90deg)}}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.kpis div{border-top:2px solid var(--navy);padding-top:10px}
+.kpis b{display:block;font-family:var(--display);font-size:clamp(26px,3vw,36px);line-height:1.05}
+.kpis span{font-size:14.5px;color:var(--muted)}
+@media (max-width:760px){.kpis{grid-template-columns:1fr 1fr}}
+.loop{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(48px,7vw,80px)}
+.ring{position:relative;width:min(460px,100%);aspect-ratio:1;margin-inline:auto}
+.ring svg{position:absolute;inset:0;width:100%;height:100%}
+.node{all:unset;position:absolute;width:112px;margin-left:-56px;margin-top:-30px;text-align:center;cursor:pointer;font-weight:700;font-size:14px;line-height:1.2;padding:10px 8px;border-radius:14px;background:var(--paper);border:1.5px solid var(--line);transition:background .25s,color .25s,transform .25s}
+.node span{display:block;font-family:var(--mono);font-size:11px;color:var(--coral)}
+.node[aria-pressed="true"]{background:var(--coral);color:#fff;border-color:var(--coral);transform:scale(1.08)}
+.node[aria-pressed="true"] span{color:#FFE3D8}
+.ring .core{position:absolute;inset:32%;border-radius:50%;background:var(--navy);color:var(--on-dark);display:grid;place-items:center;text-align:center;padding:12px;font-family:var(--display);font-weight:700;font-size:clamp(15px,1.6vw,19px);line-height:1.15}
+.loopcard{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px 26px;min-height:150px}
+.loopcard h3{font-size:26px;margin:6px 0 8px}
+.loopcard p{color:var(--muted)}
+.brief{margin-top:16px;background:#1F2E3F;color:#EAF1F7;border-radius:18px 18px 18px 4px;padding:18px 20px;font-size:16px;line-height:1.5}
+.brief small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--lemon);margin-bottom:6px}
+@media (max-width:860px){.loop{grid-template-columns:1fr}.node{width:96px;margin-left:-48px;font-size:12.5px}}
+
+/* angles + film */
+.angles{display:grid;grid-template-columns:1fr 330px;gap:clamp(20px,4vw,48px);align-items:start}
+.ang{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ang button{all:unset;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px;transition:transform .15s,background .2s}
+.ang button:hover{transform:translateY(-3px)}
+.ang button b{font-family:var(--display);font-size:20px;line-height:1.1}
+.ang button small{color:var(--muted);font-size:14px;line-height:1.35}
+.ang button[aria-pressed="true"]{background:var(--navy);color:var(--sand)}
+.ang button[aria-pressed="true"] small{color:var(--on-dark-muted)}
+.ang .t2{background:#E3F4F1}.ang .t3{background:#FFF1EA}
+.film{border-radius:30px;overflow:hidden;background:#0A1624;aspect-ratio:9/16;position:relative}
+.film video{width:100%;height:100%;object-fit:cover}
+.film figcaption{position:absolute;left:12px;right:12px;bottom:12px;font-size:13px;background:rgba(10,22,36,.72);color:#fff;border-radius:12px;padding:8px 12px}
+.wide-film{margin-top:28px;border-radius:24px;overflow:hidden;background:#0A1624;aspect-ratio:16/9}
+.wide-film video{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.angles{grid-template-columns:1fr}.film{max-width:330px;margin-inline:auto}.ang{grid-template-columns:1fr 1fr}}
+
+/* offer */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.off{border-radius:26px;padding:clamp(24px,4vw,40px)}
+.off small{font-family:var(--mono);font-size:12px;letter-spacing:.12em;font-weight:700}
+.off b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(56px,7vw,96px);line-height:1;margin:12px 0}
+.off.a{background:var(--coral);color:#fff}
+.off.b{background:var(--paper);border:1px solid var(--line)}
+@media (max-width:760px){.offer{grid-template-columns:1fr}}
+
+/* scale */
+.scale{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.sbox{background:rgba(255,255,255,.07);border-radius:24px;padding:26px}
+.sbox b{display:block;font-family:var(--display);font-size:clamp(48px,6vw,76px);color:var(--lemon);line-height:1;font-variant-numeric:tabular-nums}
+.sbox span{color:var(--on-dark-muted)}
+@media (max-width:760px){.scale{grid-template-columns:1fr}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mem{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px}
+.mem .av{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;color:#fff;margin-bottom:14px}
+.mem h3{font-size:22px}
+.mem small{display:block;font-family:var(--mono);font-size:12px;color:var(--coral);font-weight:700;letter-spacing:.06em;margin:4px 0 10px}
+.mem p{font-size:15.5px;color:var(--muted)}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.proof div{background:var(--navy);color:var(--on-dark);border-radius:18px;padding:18px 20px;font-weight:600}
+@media (max-width:860px){.team{grid-template-columns:1fr 1fr}.proof{grid-template-columns:1fr}}
+
+
+/* who we are */
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:clamp(36px,5vw,56px)}
+.chain span{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 13px;border-radius:30px;border:1px solid rgba(246,239,227,.25)}
+.chain span.on{background:var(--coral);border-color:var(--coral);color:#fff}
+.chain i{font-style:normal;color:var(--on-dark-muted)}
+.founder2{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:center}
+.founder2 figure{margin:0;border-radius:26px;overflow:hidden;aspect-ratio:3/4}
+.founder2 figure img{width:100%;height:100%;object-fit:cover}
+.awards{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px}
+.awards li{padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.06);font-size:16px}
+.awards li::before{content:"★ ";color:var(--lemon)}
+@media (max-width:860px){.founder2{grid-template-columns:1fr}.founder2 figure{max-width:420px}}
+.spec{margin-top:14px;background:var(--navy);color:var(--on-dark);border-radius:22px;padding:clamp(20px,3vw,32px)}
+.spec-h{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.spec-h b{font-family:var(--display);font-size:clamp(48px,6vw,72px);color:var(--lemon);line-height:1}
+.spec-h span{font-size:18px;max-width:46ch}
+.spec-g{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px}
+.spec-g h4{margin:0 0 6px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral)}
+.spec-g p{font-size:15.5px;color:var(--on-dark-muted)}
+@media (max-width:860px){.spec-g{grid-template-columns:1fr 1fr}}
+.layer{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,4vw,56px);align-items:center}
+.signal{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:24px}
+.signal span{padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.12);font-weight:700}
+.signal span.on{background:var(--lemon);color:var(--navy)}
+.signal i{font-style:normal;font-family:var(--mono)}
+@media (max-width:860px){.layer{grid-template-columns:1fr}.counter{grid-template-columns:1fr!important}}
+
+/* faq */
+details{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:21px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--coral);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--muted)}
+
+/* gallery strip */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:40px}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:transform .3s}
+.strip img:hover{transform:scale(1.04) rotate(-1deg)}
+@media (max-width:640px){.strip{grid-template-columns:repeat(3,1fr)}.strip img:nth-child(n+4){display:none}}
+
+.final{text-align:left}
+.final h2{font-size:clamp(44px,7vw,96px);font-weight:800;max-width:14ch}
+.contact{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact code{font-family:var(--mono);background:rgba(255,255,255,.08);padding:10px 14px;border-radius:12px;font-size:14px}
+footer{padding-block:28px;font-family:var(--mono);font-size:12px;color:var(--on-dark-muted);background:var(--navy);border-top:1px solid rgba(255,255,255,.08)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* SallyeAnder overrides */
+h1,h2,h3{letter-spacing:-.01em}
+.hero h1{font-weight:700}
+.h2{font-weight:700}
+.tiles{height:26px;background-color:var(--kraft);background-image:repeating-linear-gradient(90deg,var(--navy) 0 26px,transparent 26px 34px,var(--coral) 34px 40px,transparent 40px 52px);background-size:auto;border-block:3px solid var(--navy)}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:34px}
+.cart img{width:52px;height:52px}
+.sold{background:var(--lemon)}
+.storypic{margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:520px}
+.storypic img{width:100%;height:100%;object-fit:cover}
+.storypic figcaption{position:absolute;left:14px;bottom:14px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;background:var(--paper);color:var(--ink);padding:8px 12px;border-radius:8px;border:2px solid var(--ink)}
+.founder .split{grid-template-columns:.9fr 1.1fr}
+.st,.shop,.mem,.tab,.stage,.store,.calc,details,.lane,.loopcard,.tbl-wrap{border-radius:14px}
+.pill{border-radius:4px;border:1.5px solid currentColor}
+.months-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:6px}
+.months-grid button{all:unset;cursor:pointer;text-align:center;padding:12px 4px;border-radius:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(244,238,223,.18)}
+.months-grid button b{display:block;font-family:var(--display);font-size:20px}
+.months-grid button small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.04em;color:var(--on-dark-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.months-grid .m-gifting{border-bottom:4px solid var(--lemon)}
+.months-grid .m-cleantok,.months-grid .m-winterskin{border-bottom:4px solid var(--coral)}
+.months-grid .m-springprep,.months-grid .m-nobiteme{border-bottom:4px solid #7FB58F}
+.months-grid .m-backtoschool,.months-grid .m-fall{border-bottom:4px solid var(--kraft)}
+.months-grid button[aria-selected="true"]{background:var(--on-dark);color:var(--navy)}
+.months-grid button[aria-selected="true"] small{color:var(--muted)}
+.season-panel{margin-top:18px;display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center;background:rgba(255,255,255,.06);border-radius:18px;padding:18px}
+.season-panel img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.season-panel h3{font-size:clamp(24px,2.6vw,34px);margin-top:8px}
+.season-panel p{color:var(--on-dark-muted);margin-top:8px;max-width:56ch}
+@media (max-width:860px){.months-grid{grid-template-columns:repeat(6,1fr)}.season-panel{grid-template-columns:1fr}}
+.ang{display:grid;gap:12px}
+@media (max-width:760px){#ang{grid-template-columns:1fr 1fr!important}}
+</style>
+<header class="nav">
+  <div class="wrap">
+    <div class="brand"><b>SHOWFLOOR</b> × SALLYEANDER</div>
+    <nav aria-label="Sections">
+      <a href="#market">Market</a><a href="#brand">Your brand</a><a href="#season">Season plan</a><a href="#numbers">Numbers</a><a href="#plan">Plan</a><a href="#stage2">Stage 2</a><a href="#team">Team</a><a href="#offer">Offer</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">A proposal for SallyeAnder · Beacon, New York · since 1982</p>
+      <h1 style="margin-top:18px">Your TikTok Shop is open. <em>Let's fill it with sellers.</em></h1>
+      <p class="lede">You already have the shop, the products and 40+ years of trust. What's missing is the crowd: hundreds of creators showing Hogwash! lifting a stain, No-Bite-Me on a camping trip and a bar of Milk &amp; Mint at the sink. We build that crowd, run the shop and go live every day.</p>
+      <div class="chips"><span class="chip">First 2 months: $0 fixed</span><span class="chip">Creators paid only on sales</span><span class="chip">Live studio in Naples, FL</span></div>
+      <div class="cta-row"><a class="btn coral" href="#offer">See the offer</a><a class="btn" href="#numbers">Run the numbers</a></div>
+    </div>
+    <div style="position:relative">
+      <div class="phone">
+        <img src="media/hog_sink.jpg" alt="Hands scrubbing a dish towel with a Hogwash! bar at the sink">
+        <div class="live"><span>LIVE</span><i id="viewers">946 watching</i></div>
+        <div class="cart">
+          <img src="media/hog_box.jpg" alt="">
+          <div><b>Hogwash!™ Stain Remover Bar</b><small>$12.00</small></div>
+          <button type="button" id="addcart">Add to cart</button>
+        </div>
+      </div>
+      <div class="sold" aria-hidden="true">Stain in.<br>Stain out. Sold.</div>
+    </div>
+  </div>
+</section>
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- SHIFT -->
+<section class="dark" id="market">
+  <div class="wrap">
+    <p class="eyebrow">Where shopping is going</p>
+    <h2 class="h2" style="margin-top:14px;max-width:18ch">Customers find products in a feed — and buy right there.</h2>
+    <div class="stats">
+      <div class="stat"><b>$15.1B</b><p>TikTok Shop U.S. sales in 2025, up 68% on 2024</p></div>
+      <div class="stat"><b>+103%</b><p>Growth in H1 2026 — $11.8B in six months</p></div>
+      <div class="stat"><b>2%</b><p>of U.S. online retail spend — more than Target or Costco online</p></div>
+    </div>
+    <p class="src">Momentum Works, TikTok Shop in the U.S. 2025 &amp; H1 2026 · Consumer Edge card data, July 2026. GMV is value of goods sold, not seller profit.</p>
+  </div>
+</section>
+
+<!-- SOAP #1 -->
+<section class="no1">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Late September on TikTok Shop</p>
+      <div class="big" style="margin-top:14px">#1</div>
+      <h2 class="h2" style="margin-top:10px">The best-selling product in America by units was a bar of soap.</h2>
+      <p class="lede" style="margin-top:16px">A $5 turmeric bar sold 12,100 units in seven days — ahead of medicube, Artistry and EADEM. Your bars sell at $11 with four decades of reviews behind them.</p>
+    </div>
+    <div>
+      <div class="bars" role="list" aria-label="Top 5 TikTok Shop products by units sold, seven days">
+        <div class="bar hi" role="listitem"><div class="lbl">Byenblan Turmeric soap bar<small>$5.00</small></div><div class="track"><div class="fill" style="--w:100%"></div></div><div class="val">12.1K</div></div>
+        <div class="bar" role="listitem"><div class="lbl">medicube skincare<small>$31–85</small></div><div class="track"><div class="fill" style="--w:62%"></div></div><div class="val">7.5K</div></div>
+        <div class="bar" role="listitem"><div class="lbl">Artistry Singles<small>$1.00</small></div><div class="track"><div class="fill" style="--w:39.7%"></div></div><div class="val">4.8K</div></div>
+        <div class="bar" role="listitem"><div class="lbl">EADEM lip<small>$24.00</small></div><div class="track"><div class="fill" style="--w:36.4%"></div></div><div class="val">4.4K</div></div>
+        <div class="bar" role="listitem"><div class="lbl">Nature x Science mist<small>$14.99</small></div><div class="track"><div class="fill" style="--w:32.2%"></div></div><div class="val">3.9K</div></div>
+      </div>
+      <p class="src">FastMoss, Top Selling TikTok Shop Products, United States, week ending Sept 24, 2026. Units sold, third-party estimates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BARS + SHOPS -->
+<section class="paper">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Your exact category</p><h2 class="h2">Bars are already moving — at your price</h2><p class="lede">Seven days ending September 24, 2026. Shampoo and cleansing bars in the $12–23 range, the same shelf as your $13 shampoo bars and $11 soaps.</p></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Product</th><th>Price</th><th>Units</th><th>7-day GMV</th><th>Creator %</th></tr></thead>
+        <tbody>
+          <tr><td>BSAPY shampoo &amp; conditioner bar</td><td>$14.73–19.65</td><td class="hot">921</td><td>$15.1K</td><td>14.5%</td></tr>
+          <tr><td>BSAPY hair-loss shampoo bar</td><td>$16.99–21.99</td><td class="hot">732</td><td>$12.2K</td><td>10%</td></tr>
+          <tr><td>Kitsch Rice Water bar set</td><td>$18.60–22.41</td><td class="hot">186</td><td>$4.2K</td><td>17%</td></tr>
+          <tr><td>Lume cleansing bar</td><td>$23.00</td><td class="hot">135</td><td>$3.0K</td><td>20%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="head" style="margin-top:56px"><h3 style="font-size:clamp(26px,3vw,36px)">How far a soap and body shop can go</h3><p class="lede">Lifetime GMV of established shops in your space.</p></div>
+    <div class="shops">
+      <div class="shop top"><b>$116.1M</b><span>CANVAS Beauty · 26.0K affiliates · 33.3K lives</span></div>
+      <div class="shop"><b>$39.1M</b><span>Kitsch · 65.2K affiliates</span></div>
+      <div class="shop"><b>$21.4M</b><span>Saltair Body</span></div>
+      <div class="shop"><b>$19.1M</b><span>MAËLYS</span></div>
+      <div class="shop"><b>$10.5M</b><span>Sud Scrub</span></div>
+      <div class="shop"><b>$8.0M</b><span>Byenblan Faktori</span></div>
+    </div>
+    <p class="src">FastMoss product export and shop pages, Sept 24–25, 2026. Third-party estimates; not projections for SallyeAnder.</p>
+  </div>
+</section>
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- STATUS -->
+<section id="brand">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Where SallyeAnder stands today</p><h2 class="h2">You opened the door. Nobody's walking in yet.</h2><p class="lede">Your TikTok account is already set up as a seller. But a shop that only posts its own videos is a store with no sales floor staff.</p></div>
+    <div class="status">
+      <div class="st"><span class="pill ok">Strong</span><h3>Since 1982</h3><p>Four decades of handmade, family-run trust.</p></div>
+      <div class="st"><span class="pill ok">Strong</span><h3>2,000+ stockists</h3><p>Boutiques across the U.S. and Canada.</p></div>
+      <div class="st"><span class="pill ok">Strong</span><h3>Made in Beacon, NY</h3><p>Small-batch production in your own Hudson Valley facility.</p></div>
+      <div class="st"><span class="pill ok">Live</span><h3>Web · Instagram · Facebook</h3><p>DTC shop with rewards, newsletter and gift sets.</p></div>
+      <div class="st miss"><span class="pill no">Gap</span><h3>TikTok: 311 followers</h3><p>155 videos, about 25 likes each. Seller account on — no crowd behind it.</p></div>
+      <div class="st miss"><span class="pill no">Missing</span><h3>Affiliate army</h3><p>Creators already post No-Bite-Me on their own. Nobody is recruiting them.</p></div>
+      <div class="st miss"><span class="pill no">Missing</span><h3>Live selling</h3><p>No recurring shoppable lives.</p></div>
+      <div class="st"><span class="pill ok">Ready</span><h3>Demo-ready products</h3><p>Stain removal, bug defense, lather — all show on camera.</p></div>
+    </div>
+    <p class="src">TikTok @sallyeander profile (seller account; 311 followers, 155 videos, 3,813 likes), checked October 14, 2026 · Think Dutchess Alliance for Business · The Highlands Current, 2017.</p>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="dark founder">
+  <div class="wrap split">
+    <figure class="storypic"><img src="media/field.jpg" alt="Gathering calendula flowers in a field"><figcaption>Since 1982 · Adirondacks → Beacon, NY</figcaption></figure>
+    <div>
+      <p class="eyebrow">Why we love this brand</p>
+      <p class="quote">A father made soap in the family kitchen <span>for his son's troubled skin.</span></p>
+      <p class="lede" style="margin-top:18px">Gary Austin, a former pastry chef, started making soap in the Adirondacks in 1982. Karen sold it at farmers markets. Today their daughter Sallie runs the company, the bars are still made by hand in Beacon, and the family sponsors Black Rock Forest. That is a story creators can tell honestly — and audiences on this platform search for.</p>
+      <div class="facts">
+        <div><b>1982</b><span>first bars, family kitchen</span></div>
+        <div><b>2,000+</b><span>stores in the U.S. &amp; Canada</span></div>
+        <div><b>2–3 mo</b><span>one bar lasts, per the company</span></div>
+      </div>
+      <p class="src">sallyeander.com, Our Story · The Highlands Current (2017) · Think Dutchess Alliance for Business</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO ASSET -->
+<section>
+  <div class="wrap">
+    <div class="store">
+      <img src="media/hog_sink_ad.jpg" alt="Hogwash! ad: hands scrubbing a stained cloth in a sink">
+      <div>
+        <p class="eyebrow">The asset you already have</p>
+        <h2 class="h2" style="font-size:clamp(30px,3.6vw,48px)">"If you need it clean, just say Hogwash!" is a TikTok video waiting to happen.</h2>
+        <p class="lede">CleanTok, homesteading and camping are some of the most-watched niches on the platform. Your products don't need explaining — a stain disappears, a kid runs outside without DEET, a bar lathers. Creators only need to press record.</p>
+      </div>
+    </div>
+    <div class="strip" style="margin-top:14px">
+      <img src="media/hog_wash.jpg" alt="Scrubbing a cloth with Hogwash! on a washing machine">
+      <img src="media/nbm_kid.jpg" alt="A child getting No-Bite-Me applied outdoors">
+      <img src="media/nbm_backpack.jpg" alt="No-Bite-Me jar beside an orange hiking backpack">
+      <img src="media/goat_hand.jpg" alt="Stack of Almond Goat Milk soap bars in a hand">
+      <img src="media/lavender_field.jpg" alt="Lavender Moon soap in a lavender field">
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT EXPLORER -->
+<section class="paper">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">The launch range</p><h2 class="h2">Start with the products that demo themselves.</h2><p class="lede">Out of 86 products, five do the heavy lifting on camera. Pick one to see its job in the launch.</p></div>
+    <div class="explorer">
+      <div class="tabs" role="tablist" aria-label="Launch products">
+        <button class="tab" role="tab" aria-selected="true" data-i="0"><img src="media/hog_box.jpg" alt=""><span><b>Hogwash!™ Stain Remover</b><small>$12 · hero</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-i="1"><img src="media/nbm_jar.jpg" alt=""><span><b>No-Bite-Me™ Cream</b><small>$16 · season hero</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-i="2"><img src="media/milkmint_box.jpg" alt=""><span><b>Milk &amp; Mint Soap</b><small>$11 · everyday bar</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-i="3"><img src="media/mystery.jpg" alt=""><span><b>Mystery Soap Roll</b><small>$40 · unboxing</small></span></button>
+        <button class="tab" role="tab" aria-selected="false" data-i="4"><img src="media/bestset.jpg" alt=""><span><b>Best Seller Soap Set</b><small>$60 · gifting</small></span></button>
+      </div>
+      <div class="stage" role="tabpanel" aria-live="polite">
+        <img id="pImg" src="media/hog_stack.jpg" alt="Stack of Hogwash! bars in a hand">
+        <div class="info">
+          <div><p class="role" id="pRole">Hero product · CleanTok</p><h3 id="pName">Hogwash!™ Stain Remover Bar</h3><p id="pDesc">Before-and-after is the most reliable format on the platform. A grass stain, a wine spill, a muddy kid's shirt — three seconds of scrubbing sells it.</p></div>
+          <div class="price" id="pPrice">$12</div>
+        </div>
+      </div>
+    </div>
+    <p class="src">Products, prices and photos: sallyeander.com, October 2026. Final range agreed together on margin, stock and approved claims.</p>
+  </div>
+</section>
+
+<!-- SEASON PLAN -->
+<section class="dark" id="season">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Timing is a strategy</p><h2 class="h2">We start now — and your best product is still to come.</h2><p class="lede">October is the right moment: gifting season first, stain removal all winter, then the creator army is already in place when No-Bite-Me season starts in spring. Pick a month.</p></div>
+    <div class="months-grid" role="tablist" aria-label="Season plan by month" id="mgrid"></div>
+    <div class="season-panel" aria-live="polite">
+      <img id="sImg" src="media/mystery.jpg" alt="">
+      <div><p class="eyebrow" id="sTag">Gifting</p><h3 id="sT">Holiday gifting: sets and the Mystery Soap Roll</h3><p id="sD">Unboxing videos, gift guides and stocking-stuffer hauls. Sets lift order value while affiliates learn the brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DURABILITY -->
+<section class="sea plastic">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" style="color:var(--lemon)">The value angle</p>
+      <h2 class="h2" style="margin-top:14px">An $11 bar that lasts for months.</h2>
+      <p style="margin-top:16px;font-size:19px;max-width:54ch;color:#E9F1E6">The company says one bar lasts two to three months of showers and up to five times longer than grocery-store soap. That's a creator script on its own: "I've used this one bar since summer." Drag to see the cost per day.</p>
+      <div class="ctrl">
+        <label for="days">Days one bar lasts <output id="daysOut">75</output></label>
+        <input type="range" id="days" min="30" max="90" step="5" value="75">
+      </div>
+      <div class="counter">
+        <div><b id="perDay">$0.15</b><span>per day for an $11 bar</span></div>
+        <div><b id="perYear">5</b><span>bars a year for one person</span></div>
+      </div>
+      <p class="src">Longevity is the company's own claim (The Highlands Current, 2017). Every creator brief uses claims approved by SallyeAnder.</p>
+    </div>
+    <figure><img src="media/calendula.jpg" alt="Stack of Calendula Dandelion soap bars on a yellow background"></figure>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="numbers">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Unit economics</p><h2 class="h2">Every dollar of one sale, accounted for</h2><p class="lede">Creators are paid only after they sell. Pick a product and move the sliders.</p></div>
+    <div class="calc">
+      <div class="ctrl" style="margin-top:0">
+        <label>What sells</label>
+        <div class="seg" role="group" aria-label="Product">
+          <button type="button" data-price="11" aria-pressed="false">Soap · $11</button>
+          <button type="button" data-price="12" aria-pressed="true">Hogwash! · $12</button>
+          <button type="button" data-price="16" aria-pressed="false">No-Bite-Me · $16</button>
+          <button type="button" data-price="60" aria-pressed="false">Best Seller Set · $60</button>
+        </div>
+        <label for="fee">TikTok Shop referral fee <output id="feeOut">6%</output></label>
+        <input type="range" id="fee" min="2" max="10" step="1" value="6">
+        <label for="comm">Creator commission <output id="commOut">15%</output></label>
+        <input type="range" id="comm" min="5" max="30" step="1" value="15">
+        <label for="cac">Your current ad cost per purchase <output id="cacOut">$5.00</output></label>
+        <input type="range" id="cac" min="1" max="12" step="0.5" value="5">
+        <div class="vs" id="vs"></div>
+      </div>
+      <div>
+        <div class="stack" aria-hidden="true">
+          <div id="sFee" style="background:#9AA592"></div>
+          <div id="sCom" style="background:var(--sea)"></div>
+          <div id="sOur" style="background:var(--navy)"></div>
+          <div id="sLeft" style="background:var(--coral)"></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:#9AA592"></i>Price</span><b id="lPrice">$12.00</b>
+          <span><i style="background:#9AA592"></i>TikTok Shop fee</span><b id="lFee">−$0.72</b>
+          <span><i style="background:var(--sea)"></i>Creator commission</span><b id="lCom">−$1.80</b>
+          <span><i style="background:var(--navy)"></i>Our fee, 10%</span><b id="lOur">−$1.20</b>
+          <span class="total"><i style="background:var(--coral)"></i>Before product &amp; shipping</span><b class="total" id="lLeft">$8.28</b>
+        </div>
+        <p class="src">Illustrative. The referral rate depends on the product category — confirm in TikTok Shop Seller Center. Product, packaging, shipping and samples still come out of the remainder. The real model is built on your numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- PLAN -->
+<section class="dark" id="plan">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">The plan</p><h2 class="h2">Traffic first. Studio second.</h2><p class="lede">In H1 2026, shoppable video drove 40% of U.S. TikTok Shop sales and LIVE 8%. Videos build the audience that makes livestreams pay.</p></div>
+    <div class="stages">
+      <div class="stg"><small>MONTHS 1–2</small><h3>Build an army of affiliates</h3><p>Activate your existing shop, recruit hundreds of creators in CleanTok, homesteading, camping and natural skincare, ship samples.</p></div>
+      <div class="stg"><small>MONTHS 2–3</small><h3>Scale winners to Meta</h3><p>Winning TikTok videos go into GMV Max, then into Meta ads — plus a separate Meta creator program and a remake loop. <a href="#stage2" style="color:var(--lemon)">How it works ↓</a></p></div>
+      <div class="stg"><small>MONTHS 3–4</small><h3>Go live every day</h3><p>A SallyeAnder set at SSS Studio, our live space in Naples, Florida — daily lives on TikTok Shop, Whatnot, Instagram, Facebook and YouTube.</p></div>
+    </div>
+    <div class="months">
+      <div class="mtabs" role="tablist" aria-label="Month by month">
+        <button role="tab" aria-selected="true" data-m="0">Month 1</button><button role="tab" aria-selected="false" data-m="1">Month 2</button><button role="tab" aria-selected="false" data-m="2">Month 3</button><button role="tab" aria-selected="false" data-m="3">Month 4</button>
+      </div>
+      <div class="mpanel" role="tabpanel" id="mpanel" aria-live="polite">Audit and activate your existing TikTok Shop, choose launch products and sets, write creator briefs, start outreach, ship the first samples, set up support and reporting.</div>
+    </div>
+    <p class="src">Momentum Works, TikTok Shop in the U.S. H1 2026 (51.4% Shop, 40.4% video, 8.2% LIVE). Live launch timing depends on studio readiness, hosts, inventory and early results.</p>
+  </div>
+</section>
+
+<!-- STAGE 2 -->
+<section id="stage2">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Stage 2 · Scale to Meta</p><h2 class="h2">Two creator engines, one ad account</h2><p class="lede">TikTok Shop finds the videos that sell. Meta scales them. A second, Meta-only creator program keeps hundreds of fresh ads coming every month — so the account never runs out of creative.</p></div>
+    <div class="seg" role="group" aria-label="Highlight a flow" style="margin-bottom:14px" id="flowseg">
+      <button type="button" data-f="" aria-pressed="true">Both flows</button>
+      <button type="button" data-f="fa" aria-pressed="false">Flow 1 · TikTok Shop</button>
+      <button type="button" data-f="fb" aria-pressed="false">Flow 2 · Meta creators</button>
+    </div>
+    <div class="engines" id="engines">
+      <div class="lane a">
+        <p class="tagl">Flow 1 · TikTok Shop → Meta</p>
+        <div class="flow">
+          <div class="step"><small>01</small>Thousands of affiliate creators post on TikTok Shop</div><span class="arr">→</span>
+          <div class="step"><small>02</small>Winning videos scale with GMV Max ads</div><span class="arr">→</span>
+          <div class="step"><small>03</small>The same winners are uploaded to Meta and scaled</div>
+        </div>
+      </div>
+      <div class="hub" aria-label="SallyeAnder Meta ad account">
+        <small>YOUR META AD ACCOUNT</small>
+        <b>400–1,000</b>
+        <p>active ads at a time — the target that lets a brand scale spend without burning out creative.</p>
+      </div>
+      <div class="lane b">
+        <p class="tagl">Flow 2 · Meta creator program</p>
+        <div class="flow">
+          <div class="step"><small>01</small>Hundreds of creators join for Meta-only commissions</div><span class="arr">→</span>
+          <div class="step"><small>02</small>They send paid-partnership ad requests, copying the TikTok winners</div><span class="arr">→</span>
+          <div class="step"><small>03</small>Hundreds of new creator ads every month</div>
+        </div>
+      </div>
+    </div>
+    <div class="loop">
+      <div>
+        <p class="eyebrow">The remake loop</p>
+        <h3 class="h2" style="font-size:clamp(30px,3.6vw,46px);margin-top:12px">Take a winner. Ask the community to remake it. Put money behind every remake.</h3>
+        <div class="loopcard" style="margin-top:22px" aria-live="polite">
+          <p class="eyebrow" id="lpN">Step 1 of 5</p>
+          <h3 id="lpT">Find the winner</h3>
+          <p id="lpD">One ad pulls ahead — for example, a Hogwash! stain test that sells thousands of bars at a strong return on ad spend.</p>
+        </div>
+        <div class="brief">
+          <small>SAMPLE MESSAGE TO THE CREATOR GROUP</small>
+          "This Hogwash! stain test from @[creator] drove [X] sales at [6x] ROAS. Remake it with your own stain and send it to us. We'll run it from the SallyeAnder account as a paid collab ad with dedicated budget behind you — and you get paid right away."
+        </div>
+      </div>
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#E2D6BF" stroke-width="1.2" stroke-dasharray="2 2"/><circle id="arc" cx="50" cy="50" r="38" fill="none" stroke="#D9572A" stroke-width="1.6" stroke-linecap="round" pathLength="100" stroke-dasharray="20 100" transform="rotate(-90 50 50)" style="transition:stroke-dasharray .5s ease"/></svg>
+        <div class="core">Feedback loop<br>= the engine</div>
+      </div>
+    </div>
+    <p class="src">Figures such as 400–1,000 active ads are operating targets for the programme, not guaranteed results. Creator commissions and ad budgets are agreed with SallyeAnder in advance.</p>
+  </div>
+</section>
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- ANGLES -->
+<section class="paper">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Stage 1 · content</p><h2 class="h2">One brand, nine stories</h2><p class="lede">Hundreds of creators, each telling it in her own voice. Tap an angle to see how a creator would open the video.</p></div>
+    <div class="ang" id="ang" style="grid-template-columns:repeat(3,1fr)">
+      <button type="button" aria-pressed="false" data-h="&quot;This grass stain has been on his jeans for a week. Watch.&quot;"><b>The stain test</b><small>Hogwash! before and after</small></button>
+      <button type="button" aria-pressed="false" data-h="&quot;Everything in my homestead bathroom is handmade. Here's the soap.&quot;"><b>Modern homestead</b><small>Your own TikTok bio, as a niche</small></button>
+      <button type="button" aria-pressed="false" data-h="&quot;What's in my camping bag this summer — no DEET.&quot;"><b>Camping kit</b><small>No-Bite-Me outdoors</small></button>
+      <button type="button" aria-pressed="false" data-h="&quot;My kids won't let me forget the bug cream.&quot;"><b>Mom-approved</b><small>Kid-safe bug defense</small></button>
+      <button type="button" aria-pressed="false" data-h="&quot;Let's open a mystery roll of soap — I have no idea what's inside.&quot;"><b>Unboxing</b><small>Mystery Soap Roll</small></button>
+      <button type="button" aria-pressed="false" data-h="&quot;Day 75 with the same $11 bar.&quot;"><b>How long it lasts</b><small>Value, from approved claims</small></button>
+      <button type="button" aria-pressed="false" class="t3" data-h="&quot;A dad started this in his kitchen in 1982 for his son's skin.&quot;"><b>Since 1982</b><small>The family story</small></button>
+      <button type="button" aria-pressed="false" class="t3" data-h="&quot;Every bar is still cut by hand in a little factory in Beacon, NY.&quot;"><b>Made by hand</b><small>Behind the scenes in Beacon</small></button>
+      <button type="button" aria-pressed="false" class="t2" data-h="&quot;Five natural gifts under $20 from a family soap maker.&quot;"><b>Gift guide</b><small>Sets and stocking stuffers</small></button>
+    </div>
+    <div class="vs" id="hook" style="margin-top:16px;font-size:18px">Tap an angle above.</div>
+    <p class="src">Creators are already doing this on their own — No-Bite-Me appears in unsponsored creator videos on TikTok. Every brief uses claims approved by SallyeAnder.</p>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="dark" id="team">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Who we are</p><h2 class="h2" style="max-width:16ch">Not just marketers. Business operators.</h2><p class="lede">We have founded companies, built products, sold through e-commerce, retail and wholesale, and paid for our own customer acquisition. Great advertising cannot fix the wrong offer — so we look at the whole commercial system.</p></div>
+    <div class="chain" aria-label="How we look at a brand">
+      <span>Product</span><i>→</i><span>Positioning</span><i>→</i><span>Offer</span><i>→</i><span>Content</span><i>→</i><span>Traffic</span><i>→</i><span>Conversion</span><i>→</i><span>Sales</span><i>→</i><span>Retention</span><i>→</i><span class="on">Scale</span>
+    </div>
+    <div class="founder2">
+      <figure><img src="media/runway.jpg" alt="Smart SwimSuits look on the runway"></figure>
+      <div>
+        <p class="eyebrow">Founder proof · Sasha Royce</p>
+        <h3 class="quote" style="margin-top:12px">10+ years building, marketing and selling.</h3>
+        <div class="facts">
+          <div><b>2014</b><span>in business since</span></div>
+          <div><b>4</b><span>projects built &amp; sold</span></div>
+          <div><b>Patent</b><span>material innovation</span></div>
+        </div>
+        <p class="lede" style="margin-top:22px">Founder of <b style="color:var(--on-dark)">Smart SwimSuits</b> — built hands-on across product, manufacturing, D2C, retail, wholesale, content, partnerships and events. Like you, a founder who makes the product herself.</p>
+        <ul class="awards">
+          <li>"Most Innovative &amp; Sustainable Swimwear Brand of the World" — Janara, 2023 &amp; 2024</li>
+          <li>Drapers shortlist, Sustainable Textile Innovation, 2025</li>
+          <li>2026 Sustainable Ocean Stewardship nomination · FGI Rising Star finalist</li>
+          <li>EarthX2026 speaker · New York Fashion Week · Miami Swim Week</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">The team behind the strategy</p><h2 class="h2">Senior strategy, specialized execution</h2></div>
+    <div class="team">
+      <div class="mem"><div class="av" style="background:var(--sea)">SR</div><h3>Sasha Royce</h3><small>BRAND · SALES · D2C</small><p>10+ years building companies and consumer products across e-commerce, retail, wholesale and U.S. market strategy.</p></div>
+      <div class="mem"><div class="av" style="background:var(--navy)">DM</div><h3>Dima Mo</h3><small>GROWTH · STRATEGIC MARKETING</small><p>15+ years. Founded a manufacturing and export company, scaled a franchise to 400+ points, co-launched a startup accelerator with PwC and EMC².</p></div>
+      <div class="mem"><div class="av" style="background:var(--coral)">JG</div><h3>Julia Grace Jacobson</h3><small>CREATIVE · PRODUCTION</small><p>10+ years in fashion and sales across Miami, New York, Dubai, Paris and Milan. Founder of SSS &amp; Beyond Sustainable Marketplace.</p></div>
+      <div class="mem"><div class="av" style="background:#B7862A">EC</div><h3>Elizabeth Claros</h3><small>LIVESTREAM PRODUCTION</small><p>Show formats, hosts and the daily broadcast operation.</p></div>
+    </div>
+    <div class="spec">
+      <div class="spec-h"><b>30+</b><span>trusted specialists, assembled around the product — not a one-size agency template.</span></div>
+      <div class="spec-g">
+        <div><h4>Performance &amp; ads</h4><p>Meta · TikTok · Google Ads · media buying · creative testing · scaling</p></div>
+        <div><h4>E-commerce</h4><p>Shopify · TikTok Shop · Amazon · funnels · CRO · email · analytics</p></div>
+        <div><h4>Creators &amp; affiliates</h4><p>Recruitment · outreach · seeding · UGC systems · performance tracking</p></div>
+        <div><h4>Creative &amp; LIVE</h4><p>Short-form video · photo · design · web · hosting · LIVE production</p></div>
+      </div>
+    </div>
+    <div class="proof">
+      <div>Years selling on Amazon, Etsy, eBay and our own sites</div>
+      <div>SSS Studio, 800 Seagate Drive, Naples — our space for shoots, podcasts and livestreams</div>
+      <div>Moda Luxe Collective × Cars on 5th — fashion, sponsors, VIP experiences</div>
+    </div>
+    <p class="src">Ongoing professional education in the Chase Chappell / DOE Media performance-marketing ecosystem. Award names as supplied by the team.</p>
+  </div>
+</section>
+
+<!-- NEXT LAYER -->
+<section class="sea">
+  <div class="wrap layer">
+    <div>
+      <p class="eyebrow" style="color:var(--lemon)">Why we are building the next sales layer</p>
+      <h2 class="h2" style="margin-top:14px;color:#fff">From performance marketing to performance commerce.</h2>
+      <p style="margin-top:16px;font-size:19px;max-width:56ch;color:#E9F1E6">Years of Meta ads, creative testing and scaling — applied to affiliates, creator commerce and LIVE. Not a pivot away from performance marketing. The next layer on top of it.</p>
+      <div class="signal"><span>Creators create signal</span><i>→</i><span>Data identifies winners</span><i>→</i><span class="on">Paid media amplifies them</span></div>
+      <div class="counter" style="grid-template-columns:repeat(3,1fr)">
+        <div><b>120%</b><span>U.S. TikTok Shop sales growth vs. prior year, reported 2025</span></div>
+        <div><b>8M+</b><span>hours of U.S. LIVE shopping hosted in 2024</span></div>
+        <div><b>$68B</b><span>2026 U.S. livestream-commerce forecast</span></div>
+      </div>
+      <p class="src">TikTok Newsroom, June 2025 · Coresight Research (forecast, not an observed result).</p>
+    </div>
+    <figure class="film" style="margin:0;max-width:320px;justify-self:center">
+      <video src="media/ugc_tryon.mp4" poster="media/tryon_still.jpg" muted loop playsinline controls aria-label="A creator's try-on video for Smart SwimSuits"></video>
+      <figcaption>A creator try-on video for Smart SwimSuits.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="paper" id="offer">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Our offer</p><h2 class="h2">We carry the first two months</h2></div>
+    <div class="offer">
+      <div class="off a"><small>MONTHS 1–2</small><b>$0 fixed</b><p style="font-size:19px">10% of TikTok Shop sales only. If nothing sells, you pay us nothing.</p></div>
+      <div class="off b"><small style="color:var(--muted)">FROM MONTH 3</small><b>$10K<span style="font-size:.4em;color:var(--muted)">/mo</span></b><p style="font-size:19px;color:var(--muted)">Plus 10% of sales — our standard terms, confirmed together once you've seen the results.</p></div>
+    </div>
+    <p class="src">Paid separately: TikTok Shop fees, creator commissions, samples, fulfilment and approved ads. Samples: 5,000–10,000 units for the affiliate stage, released in waves.</p>
+  </div>
+</section>
+
+<!-- SCALE -->
+<section class="dark">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">The scale we want to build</p><h2 class="h2">What a monthly target means in parcels</h2><p class="lede">Scenarios, not promises. Set a target and an average order value — your sets push it up fast.</p></div>
+    <div class="ctrl" style="max-width:720px">
+      <label for="goal">Monthly TikTok Shop sales <output id="goalOut">$50,000</output></label>
+      <input type="range" id="goal" min="10000" max="1000000" step="10000" value="50000">
+      <label for="aov">Average order value <output id="aovOut">$28</output></label>
+      <input type="range" id="aov" min="11" max="60" step="1" value="28">
+    </div>
+    <div class="scale" style="margin-top:24px">
+      <div class="sbox"><b id="orders">1,786</b><span>orders a month</span></div>
+      <div class="sbox"><b id="perday">60</b><span>parcels a day, shipped within two business days</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="paper">
+  <div class="wrap" style="max-width:860px">
+    <div class="head"><p class="eyebrow">Fair questions</p><h2 class="h2">Questions you may be asking</h2></div>
+    <details><summary>We already have a TikTok Shop. Why do we need you?</summary><p>Having a shop is not the same as having sellers. Today the account carries the whole load with its own posts. An affiliate program puts hundreds of creators — and their audiences — behind your products, paid only on sales.</p></details>
+    <details><summary>Will this compete with our 2,000 stockists?</summary><p>The TikTok buyer is usually someone who has never walked into one of your boutiques. Creator content also builds brand demand that shows up in stores — and the store locator stays one tap away.</p></details>
+    <details><summary>Can our margin carry creator commission?</summary><p>We launch only products whose margin survives fees and shipping, and lead with sets like the Best Seller Soap Set and the Mystery Soap Roll. The rest of the catalogue stays where it is.</p></details>
+    <details><summary>You're in Florida. We're in New York.</summary><p>Creators work from their own homes across the country, and our live studio only needs product shipped to it. You keep making soap in Beacon — we run the shop, the creators and the broadcasts.</p></details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="dark final">
+  <div class="wrap">
+    <p class="eyebrow">Next step</p>
+    <h2 style="margin-top:14px">Let's put a crowd behind the shop you already opened.</h2>
+    <p class="lede" style="margin-top:18px">A 30-minute call to pick launch products for the holidays, and a plan to have the creator army in place before No-Bite-Me season.</p>
+    <div class="contact"><code>Sasha Royce · SSS Studio, 800 Seagate Drive, Naples, FL 34103 · [phone] · [email]</code><button class="btn coral" type="button" id="copy" style="border:0">Copy contact</button></div>
+    <div class="strip">
+      <img src="media/hog_stack.jpg" alt="Hogwash! bars stacked in a hand">
+      <img src="media/nbm_hike.jpg" alt="Hiker with an orange backpack and No-Bite-Me">
+      <img src="media/milkmint.jpg" alt="Milk &amp; Mint soap with its box">
+      <img src="media/mystery_open.jpg" alt="Mystery soap roll opened">
+      <img src="media/pumpkin.jpg" alt="Pumpkin soap bar">
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">SHOWFLOOR × SallyeAnder · October 2026 · Product photos © SallyeAnder · Smart SwimSuits imagery © Smart SwimSuits · Market data: Momentum Works, Consumer Edge, FastMoss, TikTok, Coresight</div></footer>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const money=(n,d=2)=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+  const int=n=>Math.round(n).toLocaleString('en-US');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const prog=$('#progress');
+  const onScroll=()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100)+'%'};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  let v=946;setInterval(()=>{v+=Math.round((Math.random()-.4)*19);$('#viewers').textContent=int(Math.max(700,v))+' watching'},1800);
+  $('#addcart').addEventListener('click',e=>{e.target.textContent='Added ✓';setTimeout(()=>e.target.textContent='Add to cart',1400)});
+
+  // product explorer
+  const P=[
+    {img:'media/hog_stack.jpg',alt:'Stack of Hogwash! bars in a hand',role:'Hero product · CleanTok',name:'Hogwash!™ Stain Remover Bar',price:'$12',desc:'Before-and-after is the most reliable format on the platform. A grass stain, a wine spill, a muddy kid\'s shirt — three seconds of scrubbing sells it.'},
+    {img:'media/nbm_arm.jpg',alt:'No-Bite-Me cream applied to an arm',role:'Season hero · from spring',name:'No-Bite-Me™ Bug Repellent & Itch Relief Cream',price:'$16',desc:'DEET-free, parent-approved, "trusted for 40 years". Camping, hiking and family creators already post it unprompted. We line up the army in winter so it launches at full strength in April.'},
+    {img:'media/milkmint.jpg',alt:'Milk & Mint soap with its kraft box',role:'Everyday bar',name:'Milk & Mint Soap',price:'$11',desc:'A top body bar. The entry ticket to the brand — and a lather close-up that works in every routine video.'},
+    {img:'media/mystery_open.jpg',alt:'Mystery soap roll unwrapped',role:'Unboxing',name:'Mystery Soap Roll',price:'$40',desc:'Unboxing is native to the platform. A roll of surprise bars is a ready-made video and a higher order value.'},
+    {img:'media/bestset.jpg',alt:'Best Seller Soap Set boxes',role:'Gifting · Q4',name:'Best Seller Soap Set',price:'$60',desc:'Gift guides and holiday hauls from October to December. Where the margin lives while affiliates learn the brand.'}
+  ];
+  $$('.tab').forEach(t=>t.addEventListener('click',()=>{
+    $$('.tab').forEach(x=>x.setAttribute('aria-selected','false'));t.setAttribute('aria-selected','true');
+    const p=P[+t.dataset.i];$('#pImg').src=p.img;$('#pImg').alt=p.alt;$('#pRole').textContent=p.role;$('#pName').textContent=p.name;$('#pPrice').textContent=p.price;$('#pDesc').textContent=p.desc;
+  }));
+
+  // season plan
+  const S=[
+    ['Oct','Gifting','Holiday gifting: sets and the Mystery Soap Roll','Unboxing videos, gift guides and stocking-stuffer hauls. Sets lift order value while affiliates learn the brand.','media/mystery.jpg'],
+    ['Nov','Gifting','Black Friday and gift guides','Best Seller Soap Set, lip balm sets and the Travel Set in creator gift guides. First winning videos found.','media/bestset.jpg'],
+    ['Dec','Gifting','Last-minute gifts and stocking stuffers','Under-$20 gifts, holiday scents like Pumpkin and Evergreen, and the first LIVE gifting shows.','media/pumpkin.jpg'],
+    ['Jan','CleanTok','Hogwash! takes the lead','New-year reset and deep-clean content: holiday stains, laundry routines, before-and-after tests.','media/hog_wash.jpg'],
+    ['Feb','Winter skin','Dry hands and winter skin','Rescue Me balm and Heavy Duty Hand Therapy Cream for cracked winter hands. Hogwash! keeps running.','media/rescue.jpg'],
+    ['Mar','Spring prep','Recruit the outdoor creators','Camping, hiking, gardening and family creators get No-Bite-Me samples before the season starts.','media/nbm_backpack.jpg'],
+    ['Apr','No-Bite-Me','Bug season opens','No-Bite-Me launches with an army already in place: camping kits, park days, kid-safe routines.','media/nbm_kid.jpg'],
+    ['May','No-Bite-Me','Memorial Day and first trips','Road-trip and camping hauls; the No-Bite-Me Pack and soap bar as bundles.','media/nbm_pack.jpg'],
+    ['Jun','No-Bite-Me','Peak outdoors','Daily lives on bug defense and itch relief; Poison Ivy soap joins the outdoor kit.','media/nbm_hike.jpg'],
+    ['Jul','No-Bite-Me','Summer camp and the 4th','Peak season. Meta scales the proven No-Bite-Me winners nationwide.','media/nbm_arm.jpg'],
+    ['Aug','Back to school','Back to school and late summer','Last outdoor push, plus gentle soaps for kids heading back to class.','media/goat_hand.jpg'],
+    ['Sep','Fall','Fall scents and gifting prep','Pumpkin, Apple Crisp and fall trios; the creator army rolls into a second holiday season.','media/lavender_field.jpg']
+  ];
+  const g=$('#mgrid');
+  S.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected',i===0?'true':'false');b.className='m-'+s[1].replace(/[^a-z]/gi,'').toLowerCase();b.innerHTML='<b>'+s[0]+'</b><small>'+s[1]+'</small>';b.addEventListener('click',()=>setS(i));g.appendChild(b)});
+  function setS(i){$$('#mgrid button').forEach((b,k)=>b.setAttribute('aria-selected',k===i?'true':'false'));$('#sTag').textContent=S[i][0]+' · '+S[i][1];$('#sT').textContent=S[i][2];$('#sD').textContent=S[i][3];$('#sImg').src=S[i][4]}
+  setS(0);
+
+  // durability
+  const d=$('#days');const dur=()=>{const n=+d.value;$('#daysOut').textContent=n;$('#perDay').textContent=money(11/n);$('#perYear').textContent=Math.ceil(365/n)};
+  d.addEventListener('input',dur);dur();
+
+  // calculator
+  let price=12;const fee=$('#fee'),comm=$('#comm'),cac=$('#cac');
+  const calc=()=>{
+    const r2=x=>Math.round(x*100)/100,f=r2(price*+fee.value/100),com=r2(price*+comm.value/100),our=r2(price*.10),left=r2(price-f-com-our);
+    $('#feeOut').textContent=fee.value+'%';$('#commOut').textContent=comm.value+'%';$('#cacOut').textContent=money(+cac.value);
+    $('#lPrice').textContent=money(price);$('#lFee').textContent='−'+money(f);$('#lCom').textContent='−'+money(com);$('#lOur').textContent='−'+money(our);$('#lLeft').textContent=money(left);
+    const seg=(id,val,lab)=>{const el=$(id);el.style.flexBasis=(val/price*100)+'%';el.textContent=(val/price>.09)?lab:''};
+    seg('#sFee',f,fee.value+'%');seg('#sCom',com,comm.value+'%');seg('#sOur',our,'10%');seg('#sLeft',left,money(left));
+    const diff=+cac.value-com;
+    $('#vs').innerHTML= diff>0
+      ? 'A creator sale costs <b>'+money(com)+'</b>. Your ad costs <b>'+money(+cac.value)+'</b>. The creator route keeps <b>'+money(diff)+'</b> more per order — and you pay nothing until it sells.'
+      : 'At this commission a creator costs <b>'+money(com)+'</b>, more than your <b>'+money(+cac.value)+'</b> ad. Lower the rate or lead with a set.';
+  };
+  $$('.calc .seg button').forEach(b=>b.addEventListener('click',()=>{$$('.calc .seg button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');price=+b.dataset.price;calc()}));
+  [fee,comm,cac].forEach(x=>x.addEventListener('input',calc));calc();
+
+  // months
+  const M=['Audit and activate your existing TikTok Shop, choose launch products and sets, write creator briefs, start outreach, ship the first samples, set up support and reporting.',
+    'Grow the affiliate network and content volume around holiday gifting. Push winning videos into GMV Max and start moving them into Meta ads.',
+    'Launch the Meta creator program and the remake loop. Hogwash! takes the lead. Build the SallyeAnder set at SSS Studio and train hosts.',
+    'Daily livestreams start, fed by the affiliate engine — and outdoor creators get No-Bite-Me samples ahead of spring.'];
+  $$('.mtabs button').forEach(b=>b.addEventListener('click',()=>{$$('.mtabs button').forEach(x=>x.setAttribute('aria-selected','false'));b.setAttribute('aria-selected','true');$('#mpanel').textContent=M[+b.dataset.m]}));
+
+  // stage 2 flows
+  $$('#flowseg button').forEach(b=>b.addEventListener('click',()=>{$$('#flowseg button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');$('#engines').className='engines '+b.dataset.f}));
+
+  // remake loop
+  const L=[
+    ['Find the winner','One ad pulls ahead — for example, a Hogwash! stain test that sells thousands of bars at a strong return on ad spend.'],
+    ['Brief the community','We post that exact ad to the creator group with one ask: remake this one.'],
+    ['Creators remake it','Dozens copy the structure with their own stains, kids and campsites, and send the videos in.'],
+    ['Launch as paid collab','Each remake runs from the SallyeAnder account as a partnership ad with dedicated budget. Creators get paid right away.'],
+    ['Feed the data back','Results pick the next winner and shape the next brief. That feedback loop is what makes the system work.']
+  ];
+  const ring=$('#ring');let li=0,timer=null;
+  L.forEach((l,i)=>{const a=-Math.PI/2+i*2*Math.PI/L.length;const b=document.createElement('button');b.type='button';b.className='node';b.style.left=(50+38*Math.cos(a))+'%';b.style.top=(50+38*Math.sin(a))+'%';b.innerHTML='<span>0'+(i+1)+'</span>'+l[0];b.setAttribute('aria-pressed',i===0?'true':'false');b.addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null}setL(i)});ring.appendChild(b)});
+  const nodes=[...ring.querySelectorAll('.node')];
+  function setL(i){li=i;nodes.forEach((n,k)=>n.setAttribute('aria-pressed',k===i?'true':'false'));$('#lpN').textContent='Step '+(i+1)+' of '+L.length;$('#lpT').textContent=L[i][0];$('#lpD').textContent=L[i][1];$('#arc').setAttribute('stroke-dasharray',((i+1)*20)+' 100')}
+  if(!reduce){timer=setInterval(()=>setL((li+1)%L.length),3600)}
+  setL(0);
+
+  // angles
+  $$('#ang button').forEach(b=>b.addEventListener('click',()=>{$$('#ang button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');$('#hook').innerHTML='<b style="font-family:var(--mono);font-size:12px;letter-spacing:.1em">OPENING LINE</b><br>'+b.dataset.h}));
+
+  // scale
+  const go=$('#goal'),a=$('#aov');
+  const sc=()=>{const o=+go.value/+a.value;$('#goalOut').textContent=money(+go.value,0);$('#aovOut').textContent=money(+a.value,0);$('#orders').textContent=int(o);$('#perday').textContent=int(o/30)};
+  go.addEventListener('input',sc);a.addEventListener('input',sc);sc();
+
+  // copy
+  $('#copy').addEventListener('click',async e=>{const t=document.querySelector('.contact code').textContent;try{await navigator.clipboard.writeText(t);e.target.textContent='Copied'}catch(_){const r=document.createRange();r.selectNodeContents(document.querySelector('.contact code'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selected — press ⌘C'}setTimeout(()=>e.target.textContent='Copy contact',1800)});
+
+  // videos in view
+  if(!reduce && 'IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.play().catch(()=>{})}else x.target.pause()}),{threshold:.35});
+    $$('video').forEach(vd=>io.observe(vd));
+  }
+})();
+</script>
+
+</body></html>
