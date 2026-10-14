@@ -399,13 +399,48 @@ h1,h2,h3{letter-spacing:-.01em}
 @media (max-width:860px){.months-grid{grid-template-columns:repeat(6,1fr)}.season-panel{grid-template-columns:1fr}}
 .ang{display:grid;gap:12px}
 @media (max-width:760px){#ang{grid-template-columns:1fr 1fr!important}}
+
+/* nav: home link, about link, dropdown */
+.brand a.home{text-decoration:none;color:inherit}
+.brand a.home:hover b{text-decoration:underline;text-underline-offset:4px}
+.nav nav a.about{color:var(--navy);border:1.5px solid var(--navy);border-radius:30px;padding:6px 12px;font-size:13px}
+.nav nav a.about:hover{background:var(--navy);color:var(--sand)}
+.menu-btn{display:none;width:44px;height:44px;border:1.5px solid var(--navy);border-radius:12px;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
+.menu-btn span{display:block;width:20px;height:2px;background:var(--navy);transition:transform .2s,opacity .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu{position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -24px rgba(31,42,34,.35);max-height:calc(100vh - 70px);overflow:auto}
+.nav .menu .wrap{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;height:auto;padding-block:8px 18px}
+.menu a{text-decoration:none;font-weight:600;font-size:19px;padding:13px 4px;border-bottom:1px solid var(--line)}
+.menu a:last-child{border-bottom:0}
+.menu .mlabel{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:14px 0 2px}
+.menu a.mhome{background:var(--navy);color:var(--sand);border-radius:12px;padding:14px 16px;margin-top:6px;border-bottom:0}
+@media (max-width:1040px){.nav nav a.about{display:none}}
+@media (max-width:860px){.nav nav{display:none}.menu-btn{display:inline-flex}}
+@media (min-width:861px){.menu{display:none!important}}
+[id]{scroll-margin-top:68px}
+.about-cta{margin-top:14px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--coral);color:#fff;border-radius:22px;padding:clamp(20px,3vw,32px)}
+.about-cta h3{font-size:clamp(26px,3vw,38px);font-weight:700;margin-top:6px}
+.about-cta p{margin-top:8px;max-width:58ch;color:#FFF1EA;font-size:17px}
+.about-cta .eyebrow{color:#FFE3D8}
+.about-cta .btn{background:#fff;color:var(--coral);border-color:#fff}
 </style>
 <header class="nav">
   <div class="wrap">
-    <div class="brand"><b>SHOWFLOOR</b> × SALLYEANDER</div>
+    <div class="brand"><a class="home" href="https://getshowfloor.com/" title="SHOWFLOOR — home page"><b>SHOWFLOOR</b></a> × SALLYEANDER</div>
     <nav aria-label="Sections">
-      <a href="#market">Market</a><a href="#brand">Your brand</a><a href="#season">Season plan</a><a href="#numbers">Numbers</a><a href="#plan">Plan</a><a href="#stage2">Stage 2</a><a href="#team">Team</a><a href="#offer">Offer</a>
+      <a href="#market">Market</a><a href="#brand">Your brand</a><a href="#season">Season plan</a><a href="#numbers">Numbers</a><a href="#plan">Plan</a><a href="#stage2">Stage 2</a><a href="#team">Team</a><a href="#offer">Offer</a><a class="about" href="https://getshowfloor.com/">About SHOWFLOOR ↗</a>
     </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <div class="wrap">
+      <p class="mlabel">On this page</p>
+      <a href="#market">Market</a><a href="#brand">Your brand</a><a href="#season">Season plan</a><a href="#numbers">Numbers</a><a href="#plan">Plan</a><a href="#stage2">Stage 2</a><a href="#team">Team</a><a href="#offer">Offer</a>
+      <p class="mlabel">SHOWFLOOR</p>
+      <a class="mhome" href="https://getshowfloor.com/">About SHOWFLOOR · home page ↗</a>
+    </div>
   </div>
   <div class="progress" id="progress"></div>
 </header>
@@ -804,6 +839,10 @@ h1,h2,h3{letter-spacing:-.01em}
       <div>SSS Studio, 800 Seagate Drive, Naples — our space for shoots, podcasts and livestreams</div>
       <div>Moda Luxe Collective × Cars on 5th — fashion, sponsors, VIP experiences</div>
     </div>
+    <div class="about-cta">
+      <div><p class="eyebrow">Learn more</p><h3>About SHOWFLOOR</h3><p>A performance-commerce team in Naples, Florida: built by entrepreneurs, backed by 30+ specialists, designed around sales. See our founders, our approach and our LIVE studio.</p></div>
+      <a class="btn" href="https://getshowfloor.com/">Visit getshowfloor.com →</a>
+    </div>
     <p class="src">Ongoing professional education in the Chase Chappell / DOE Media performance-marketing ecosystem. Award names as supplied by the team.</p>
   </div>
 </section>
@@ -876,7 +915,7 @@ h1,h2,h3{letter-spacing:-.01em}
     <p class="eyebrow">Next step</p>
     <h2 style="margin-top:14px">Let's put a crowd behind the shop you already opened.</h2>
     <p class="lede" style="margin-top:18px">A 30-minute call to pick launch products for the holidays, and a plan to have the creator army in place before No-Bite-Me season.</p>
-    <div class="contact"><code>Sasha Royce · SSS Studio, 800 Seagate Drive, Naples, FL 34103 · [phone] · [email]</code><button class="btn coral" type="button" id="copy" style="border:0">Copy contact</button></div>
+    <div class="contact"><code>Sasha Royce · SSS Studio, 800 Seagate Drive, Naples, FL 34103 · [phone] · [email]</code><button class="btn coral" type="button" id="copy" style="border:0">Copy contact</button><a class="btn" href="https://getshowfloor.com/" style="border-color:var(--on-dark);color:var(--on-dark)">About SHOWFLOOR ↗</a></div>
     <div class="strip">
       <img src="media/hog_stack.jpg" alt="Hogwash! bars stacked in a hand">
       <img src="media/nbm_hike.jpg" alt="Hiker with an orange backpack and No-Bite-Me">
@@ -886,7 +925,7 @@ h1,h2,h3{letter-spacing:-.01em}
     </div>
   </div>
 </section>
-<footer><div class="wrap">SHOWFLOOR × SallyeAnder · October 2026 · Product photos © SallyeAnder · Smart SwimSuits imagery © Smart SwimSuits · Market data: Momentum Works, Consumer Edge, FastMoss, TikTok, Coresight</div></footer>
+<footer><div class="wrap"><a href="https://getshowfloor.com/" style="color:inherit">SHOWFLOOR</a> × SallyeAnder · October 2026 · Product photos © SallyeAnder · Smart SwimSuits imagery © Smart SwimSuits · Market data: Momentum Works, Consumer Edge, FastMoss, TikTok, Coresight</div></footer>
 
 <script>
 (function(){
@@ -999,4 +1038,16 @@ h1,h2,h3{letter-spacing:-.01em}
 })();
 </script>
 
+<script>
+(function(){
+  const btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+  if(!btn||!menu)return;
+  const set=o=>{btn.setAttribute('aria-expanded',o?'true':'false');btn.setAttribute('aria-label',o?'Close menu':'Open menu');menu.hidden=!o};
+  btn.addEventListener('click',e=>{e.stopPropagation();set(btn.getAttribute('aria-expanded')!=='true')});
+  menu.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
+  document.addEventListener('click',e=>{if(!menu.hidden&&!menu.contains(e.target))set(false)});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){set(false);btn.focus()}});
+  matchMedia('(min-width:861px)').addEventListener('change',e=>{if(e.matches)set(false)});
+})();
+</script>
 </body></html>
